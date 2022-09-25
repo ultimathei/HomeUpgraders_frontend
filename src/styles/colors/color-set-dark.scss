@@ -1,0 +1,54 @@
+// Dark color set
+:root {
+  --hu-dark-primary-500: #491389;
+  --hu-dark-primary-400: #6211c8;
+  --hu-dark-primary-300: #742ddd;
+  --hu-dark-primary-200: #c2a9fa;
+  --hu-dark-primary-100: #dbd1ff;
+
+  --hu-dark-secondary-500: #066858;
+  --hu-dark-secondary-400: #027d69;
+  --hu-dark-secondary-300: #259c72;
+  --hu-dark-secondary-200: #69c085;
+  --hu-dark-secondary-100: #a8e2ab;
+
+  --hu-dark-information-100: #adc9ff;
+  --hu-highlight-100: #fff2b6;
+
+  --hu-dark-error-500: #9d091e;
+  --hu-dark-error-400: #bf0711;
+  --hu-dark-error-300: #de360b;
+  --hu-dark-error-200: #f66161;
+  --hu-dark-error-100: #fdaaaa;
+
+  --hu-dark-background-700: #000000;
+  --hu-dark-background-600: #161616;
+  --hu-dark-background-500: #2C2C2C;
+  --hu-dark-background-400: #393939;
+  --hu-dark-background-300: #bdbdbd;
+  --hu-dark-background-200: #e0e0e0;
+  --hu-dark-background-100: #eeeeee;
+  --hu-dark-background-50:  #FFFFFF;
+
+  --hu-dark-overlay-01: rgba(0, 0, 0, 0.55);
+  --hu-dark-overlay-02: rgba(0, 0, 0, 0.32);
+
+  --hu-dark-onlight-01: rgba(0, 0, 0, 0.88);
+  --hu-dark-onlight-02: rgba(0, 0, 0, 0.50);
+  --hu-dark-onlight-03: rgba(0, 0, 0, 0.38);
+  --hu-dark-onlight-04: rgba(0, 0, 0, 0.12);
+
+  --hu-dark-ondark-01: rgba(255, 255, 255, 0.88);
+  --hu-dark-ondark-02: rgba(255, 255, 255, 0.50);
+  --hu-dark-ondark-03: rgba(255, 255, 255, 0.38);
+  --hu-dark-ondark-04: rgba(255, 255, 255, 0.12);
+
+  --hu-dark-shadow-01: 0 1px 5px 0 rgba(33, 34, 66, 0.04), 0 0 3px 0 rgba(0, 0, 0, 0.08), 0 2px 1px 0 rgba(0, 0, 0, 0.12);
+  --hu-dark-shadow-02: 0 3px 5px -3px rgba(33, 34, 66, 0.04), 0 3px 14px 2px rgba(0, 0, 0, 0.08), 0 8px 10px 1px rgba(0, 0, 0, 0.12);
+  --hu-dark-shadow-03: 0 6px 10px -5px rgba(0, 0, 0, 0.04), 0 6px 30px 5px rgba(0, 0, 0, 0.08), 0 16px 24px 2px rgba(0, 0, 0, 0.12);
+  --hu-dark-shadow-04: 0 9px 15px -7px rgba(0, 0, 0, 0.04), 0 9px 46px 8px rgba(0, 0, 0, 0.08), 0 24px 38px 3px rgba(0, 0, 0, 0.12);
+
+  --hu-light-shadow-05: 0 2px 8px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(0, 0, 0, 0.12);
+
+  --hu-dark-shadow-message-input: 0 1px 5px 0 rgba(33, 34, 66, 0.12), 0 0 1px 0 rgba(33, 34, 66, 0.16), 0 2px 1px 0 rgba(33, 34, 66, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}

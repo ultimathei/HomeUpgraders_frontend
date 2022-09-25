@@ -30,6 +30,8 @@
   })
   const emit = defineEmits(['click'])
   // const state = reactive({})
+
+  // Returns the css variable name to use
   const getButtonBackgroundVar = () => {
     if (props.disabled) return '--hu-button-bg-color--disabled'
     if (props.primary) return '--hu-button-bg-color--primary'
