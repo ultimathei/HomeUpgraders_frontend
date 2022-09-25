@@ -13,7 +13,8 @@
     "test": "jest src"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@histoire/plugin-vue": "^0.10.7",
