@@ -1,18 +1,19 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { reactive } from 'vue'
   const props = defineProps({
     label: {
       type: String,
       default: 'Count'
     }
   })
-
-  let count = ref(0)
-  const increase = () => count.value++
+  const state = reactive({
+    count: 0,
+  })
+  const increase = () => state.count++
 
   // const emit = defineEmits(['click'])
 </script>
 
 <template>
-  <button @click="increase">{{label}} - {{count}}</button>
+  <button @click="increase">{{label}} - {{state.count}}</button>
 </template>
