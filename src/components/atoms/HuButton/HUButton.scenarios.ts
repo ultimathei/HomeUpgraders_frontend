@@ -1,3 +1,4 @@
+/* Props of each scenario */
 export default [
   {
     label: 'Primary enabled',
