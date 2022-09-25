@@ -4,7 +4,9 @@ Home Upgraders website is the code repository for the frontend web-application u
 
 The application is a simple website to showcase what the company is capable of.
 
-## Prerequisites
+:house: :house_with_graden: :hammer: :wrench: :muscle: :clap: :minibus:
+
+# Prerequisites
 
 Before you begin development, ensure you have met the following requirements:
 
@@ -34,14 +36,14 @@ Using [Vue 3](https://vuejs.org/) `<script setup>` [Single File Components or SF
 
 [CloudBees](https://docs.cloudbees.com/docs/cloudbees-feature-management/latest/) feature-flags `... TBD ...` [see blog](https://www.martinfowler.com/articles/feature-toggles.html)
 
-## Installation
+# Installation
 
 In the project root run:
 ```
 npm install
 ```
 
-## Developing
+# Development
 
 To run the development setup, I recommend using the Terminals Manager extension. This will allow you to run all the required terminal instances with a single VSCode command:
 
@@ -49,11 +51,11 @@ To run the development setup, I recommend using the Terminals Manager extension.
 1. then simply type in: `Terminals: Run` and hit `Enter`
 1. This should open up all the terminals defined in the `.vscode/terminals.json` file
 
-### TDD + CDD = TCDD
+## TDD + CDD = TCDD
 
 The combination of a `Histoire` storybook and `Jest` unit tests allows for something I like to call `Tested Component Driven Development`. Dumb components can be fully developed and tested even without mounting them anywhere in the application.
 
-### File Structure Notes
+## File Structure Notes
 
 Brad Frost's [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) is utilized across the project. `Atoms`, `Molecules`, `Organisms` and `Templates` are located in `src/components/`, grouped into separate folders. These I consider ['Dumb' or Presentational components](https://medium.com/@thejasonfile/dumb-components-and-smart-components-e7b33a698d43), so the aim is to keep these as DRY as possible. They should only depend on their `props` and should only communicate to the outside of their bounderies by `emits`.
 
