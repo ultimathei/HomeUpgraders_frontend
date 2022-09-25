@@ -1,0 +1,1 @@
+import './styles/global.css' // Import global CSS

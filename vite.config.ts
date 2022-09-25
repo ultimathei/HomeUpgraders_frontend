@@ -12,8 +12,15 @@ export default defineConfig({
       '@Molecules': path.resolve(__dirname, 'src/components/molecules'),
       '@Organisms': path.resolve(__dirname, 'src/components/organisms'),
       '@Templates': path.resolve(__dirname, 'src/components/templates'),
-      '@Views': path.resolve(__dirname, 'src/views'),
+      '@Views': path.resolve(__dirname, 'src/views')
     },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/global.scss";`
+      }
+    }
   },
   plugins: [vue()]
 })

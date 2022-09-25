@@ -1,10 +1,22 @@
 export default [
   {
-    label: 'Label 1',
+    label: 'Primary enabled',
     disabled: false,
+    primary: true,
   },
   {
-    label: 'Label 2',
+    label: 'Primary disabled',
     disabled: true,
+    primary: true,
+  },
+  {
+    label: 'Secondary enabled',
+    disabled: false,
+    primary: false,
+  },
+  {
+    label: 'Secondary disabled',
+    disabled: true,
+    primary: false,
   },
 ]
