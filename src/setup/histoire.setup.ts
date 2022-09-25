@@ -1,1 +1,2 @@
-import './styles/global.css' // Import global CSS
+// Seems it's not needed, as it has been loaded by vite.config.ts
+// import '../styles/global.scss' // Import global CSS

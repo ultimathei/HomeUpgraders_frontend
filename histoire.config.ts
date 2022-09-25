@@ -2,7 +2,7 @@ import { defineConfig } from 'histoire'
 import { HstVue } from '@histoire/plugin-vue'
 
 export default defineConfig({
-  setupFile: '@/setup/histoire.setup.ts',
+  // setupFile: './src/setup/histoire.setup.ts',
   plugins: [
     HstVue(),
   ],
