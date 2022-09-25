@@ -1,3 +1,16 @@
+<template>
+  <button
+    :class="$style.button"
+    :style="computedStyle"
+    @click.prevent="emit('click')"
+    :disabled="disabled"
+    :aria-disabled="disabled"
+    :tabindex="disabled ? -1 : 0"
+  >
+    {{label}}
+  </button>
+</template>
+
 <script setup lang="ts">
   import { computed } from 'vue'
 
@@ -27,31 +40,4 @@
   }))
 </script>
 
-<template>
-  <button
-    :class="$style.button"
-    :style="computedStyle"
-    @click.prevent="emit('click')"
-    :disabled="disabled"
-    :aria-disabled="disabled"
-    :tabindex="disabled ? -1 : 0"
-  >
-    {{label}}
-  </button>
-</template>
-
-<style lang="scss" module>
-  .button {
-    --hu-button-bg-color--primary: var(--hu-bg-color-1);
-    --hu-button-bg-color--secondary: var(--hu-bg-color-2);
-    --hu-button-bg-color--disabled: var(--hu-bg-color-grey);
-
-    // comp specific
-    --button-background-color: var(--hu-button-bg-color--primary); // default
-    background-color: var(--button-background-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 5px 15px;
-  }
-</style>
+<style src="./HUButton.module.scss" module lang="scss"></style>

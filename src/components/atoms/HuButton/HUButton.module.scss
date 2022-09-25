@@ -1,0 +1,13 @@
+.button {
+  --hu-button-bg-color--primary: var(--hu-bg-color-1);
+  --hu-button-bg-color--secondary: var(--hu-bg-color-2);
+  --hu-button-bg-color--disabled: var(--hu-bg-color-grey);
+
+  // comp specific
+  --button-background-color: var(--hu-button-bg-color--primary); // default
+  background-color: var(--button-background-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 15px;
+}
