@@ -4,7 +4,7 @@ Home Upgraders website is the code repository for the frontend web-application u
 
 The application is a simple website to showcase what the company is capable of.
 
-:house: :house_with_graden: :hammer: :wrench: :muscle: :clap: :minibus:
+:house: :house_with_garden: :hammer: :wrench: :muscle: :clap: :minibus:
 
 # Prerequisites
 
