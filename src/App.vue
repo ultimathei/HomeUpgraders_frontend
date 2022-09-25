@@ -8,4 +8,4 @@ import HUButton from './components/atoms/hu-button/HUButton.vue'
   <HUButton/>
 </template>
 
-<style scoped></style>
+<style></style>
