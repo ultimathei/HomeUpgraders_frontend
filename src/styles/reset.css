@@ -77,3 +77,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+#app {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}

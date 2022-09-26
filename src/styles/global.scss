@@ -1,9 +1,39 @@
 :root {
-  --hu-bg-color-1: rgb(0, 196, 121);
-  --hu-bg-color-2: pink;
-  --hu-bg-color-3: hotpink;
-  --hu-bg-color-4: rgb(255, 166, 0);
-  --hu-bg-color-grey: rgb(182, 182, 182);
+  // --hu-color--primary--hue: 157;
+  // --hu-color--secondary--hue: 328;
+  // --hu-color--black--hue: 328;
+  // --hu-color--white--hue: 328;
+
+  --hu-color--primary: hsl(157, 50%, 50%);
+  --hu-color--primary--darker: hsl(157, 50%, 45%);
+  --hu-color--primary--lighter: hsl(157, 50%, 55%);
+  --hu-color--primary--disabled: hsl(157, 5%, 50%);
+  --hu-color--primary--contrast: hsl(157, 50%, 10%);
+
+  --hu-color--secondary: hsl(328, 50%, 50%);
+  --hu-color--secondary--darker: hsl(328, 50%, 45%);
+  --hu-color--secondary--lighter: hsl(328, 50%, 55%);
+  --hu-color--secondary--disabled: hsl(328, 5%, 50%);
+  --hu-color--secondary--contrast: hsl(328, 50%, 10%);
+
+  --hu-color--black: hsl(328, 15%, 15%);
+  --hu-color--black--darker: hsl(328, 15%, 0%);
+  --hu-color--black--lighter: hsl(328, 15%, 25%);
+  --hu-color--black--disabled: hsl(328, 5%, 50%);
+
+  --hu-color--white: hsl(328, 15%, 85%);
+  --hu-color--white--darker: hsl(328, 15%, 70%);
+  --hu-color--white--lighter: hsl(328, 15%, 95%);
+  --hu-color--white--disabled: hsl(328, 5%, 60%);
+
+  --hu-color--black--contrast: var(--hu-color--white);
+  --hu-color--white--contrast: var(--hu-color--black);
+
+
+  --hu-font-size--s: 0.8em;
+  --hu-font-size--m: 1em;
+  --hu-font-size--l: 1.2em;
+  --hu-font-size--xl: 1.4em;
 }
 
 // @import 'colors/colors';

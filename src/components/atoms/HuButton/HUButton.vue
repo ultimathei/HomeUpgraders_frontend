@@ -1,7 +1,10 @@
 <template>
   <button
-    :class="$style.button"
-    :style="computedStyle"
+    :class="[
+      $style.button,
+      $style[`button--type-${props.type}`],
+      $style[`button--size-${props.size}`],
+    ]"
     @click.prevent="emit('click')"
     :disabled="disabled"
     :aria-disabled="disabled"
@@ -12,7 +15,8 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue'
+import { PropType } from 'vue'
+import { Size, Type } from './types'
 
   const props = defineProps({
     label: {
@@ -23,23 +27,16 @@
       type: Boolean,
       default: false,
     },
-    primary: {
-      type: Boolean,
-      default: true,
+    type: {
+      type: String as PropType<Type>,
+      default: Type.primary,
+    },
+    size: {
+      type: String as PropType<Size>,
+      default: Size.m,
     },
   })
   const emit = defineEmits(['click'])
-  // const state = reactive({})
-
-  // Returns the css variable name to use
-  const getButtonBackgroundVar = () => {
-    if (props.disabled) return '--hu-button-bg-color--disabled'
-    if (props.primary) return '--hu-button-bg-color--primary'
-    return '--hu-button-bg-color--secondary'
-  }
-  const computedStyle = computed(() => ({
-    '--button-background-color': `var(${getButtonBackgroundVar()})`
-  }))
 </script>
 
 <style src="./HUButton.module.scss" module lang="scss"></style>
