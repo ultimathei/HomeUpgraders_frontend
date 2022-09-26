@@ -9,8 +9,8 @@
   cursor: pointer;
   padding: 0.25em 1em;
   font-size: var(--font-size);
+  text-transform: uppercase;
   
-  // modifiers
   &:is(:hover, :focus, :focus-within) {
     --bg-color: var(--hu-color--primary--darker);
   }
@@ -19,26 +19,67 @@
     cursor: not-allowed;
     opacity: 0.6;
   }
-  &--type-secondary {
+
+  // modifiers
+  &--s {
+    @extend .button;
+    --font-size: var(--hu-font-size--s);
+  }
+  &--m {
+    @extend .button;
+  }
+  &--l {
+    @extend .button;
+    --font-size: var(--hu-font-size--l);
+  }
+  &--xl {
+    @extend .button;
+    --font-size: var(--hu-font-size--xl);
+  }
+  &--primary {
+    @extend .button;
+    &--s {
+      @extend .button--primary;
+      @extend .button--s;
+    }
+    &--m {
+      @extend .button--primary;
+    }
+    &--l {
+      @extend .button--primary;
+      @extend .button--l;
+    }
+    &--xl {
+      @extend .button--primary;
+      @extend .button--xl;
+    }
+  }
+  &--secondary {
+    @extend .button;
     --bg-color: var(--hu-color--secondary);
     --color: var(--hu-color--secondary--contrast);
-    
+
     &:is(:hover, :focus, :focus-within) {
       --bg-color: var(--hu-color--secondary--darker);
     }
-
     &:disabled {
       --bg-color: var(--hu-color--secondary--disabled);
     }
-  }
 
-  &--size-s {
-    --font-size: var(--hu-font-size--s);
-  }
-  &--size-l {
-    --font-size: var(--hu-font-size--l);
-  }
-  &--size-xl {
-    --font-size: var(--hu-font-size--xl);
+    &--s {
+      @extend .button--secondary;
+      @extend .button--s;
+    }
+    &--m {
+      @extend .button--secondary;
+    }
+    &--l {
+      @extend .button--secondary;
+      @extend .button--l;
+    }
+    &--xl {
+      @extend .button--secondary;
+      @extend .button--xl;
+    }
   }
 }

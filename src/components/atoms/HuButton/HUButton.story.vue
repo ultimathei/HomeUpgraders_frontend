@@ -2,7 +2,7 @@
   import HUButton from './HUButton.vue'
   import { hstEvent } from 'histoire/client'
   import scenarios from './HUButton.scenarios'
-  import {Type, Size} from './types'
+  import {Type, Size} from './HUButton.types'
 </script>
 
 <template>

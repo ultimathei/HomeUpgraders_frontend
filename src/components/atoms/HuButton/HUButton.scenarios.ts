@@ -1,5 +1,5 @@
 /* Props of each scenario */
-import { Type, Size } from './types'
+import { Type, Size } from './HUButton.types'
 export default [
   {
     label: 'Primary enabled',

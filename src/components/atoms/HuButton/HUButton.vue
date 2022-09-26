@@ -1,10 +1,6 @@
 <template>
   <button
-    :class="[
-      $style.button,
-      $style[`button--type-${props.type}`],
-      $style[`button--size-${props.size}`],
-    ]"
+    :class="$style[`button--${props.type}--${props.size}`]"
     @click.prevent="emit('click')"
     :disabled="disabled"
     :aria-disabled="disabled"
@@ -16,7 +12,7 @@
 
 <script setup lang="ts">
 import { PropType } from 'vue'
-import { Size, Type } from './types'
+import { Size, Type } from './HUButton.types'
 
   const props = defineProps({
     label: {

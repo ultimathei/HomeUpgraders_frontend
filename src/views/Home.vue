@@ -3,7 +3,7 @@
   import {
     Size as ButtonSize,
     Type as ButtonType,
-  } from '@Atoms/HUButton/types'
+  } from '@/components/atoms/HuButton/HUButton.types'
 
   // method example
   const clickButton = () => console.log('Button clicked')
