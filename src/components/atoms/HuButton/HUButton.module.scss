@@ -20,42 +20,31 @@
     opacity: 0.6;
   }
 
-  // modifiers
-  &--s {
-    @extend .button;
-    --font-size: var(--hu-font-size--s);
+  $types: 'primary', 'secondary';
+  @mixin size-variations ($type: '') {
+    $sizes: 's', 'm', 'l', 'xl';
+    @each $size in $sizes {
+      &--#{$size} {
+        @extend .button#{$type};
+        @if $type == '' {
+          --font-size: var(--hu-font-size--#{$size});
+        }
+        @else {
+          @extend .button--#{$size};
+        }
+      }
+    }
   }
-  &--m {
-    @extend .button;
-  }
-  &--l {
-    @extend .button;
-    --font-size: var(--hu-font-size--l);
-  }
-  &--xl {
-    @extend .button;
-    --font-size: var(--hu-font-size--xl);
-  }
+
+  @include size-variations();
   &--primary {
     @extend .button;
-    &--s {
-      @extend .button--primary;
-      @extend .button--s;
-    }
-    &--m {
-      @extend .button--primary;
-    }
-    &--l {
-      @extend .button--primary;
-      @extend .button--l;
-    }
-    &--xl {
-      @extend .button--primary;
-      @extend .button--xl;
-    }
+    @include size-variations('--primary');
   }
   &--secondary {
     @extend .button;
+    @include size-variations('--secondary');
+
     --bg-color: var(--hu-color--secondary);
     --color: var(--hu-color--secondary--contrast);
 
@@ -64,22 +53,6 @@
     }
     &:disabled {
       --bg-color: var(--hu-color--secondary--disabled);
-    }
-
-    &--s {
-      @extend .button--secondary;
-      @extend .button--s;
-    }
-    &--m {
-      @extend .button--secondary;
-    }
-    &--l {
-      @extend .button--secondary;
-      @extend .button--l;
-    }
-    &--xl {
-      @extend .button--secondary;
-      @extend .button--xl;
     }
   }
 }
