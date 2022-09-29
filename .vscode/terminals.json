@@ -30,6 +30,17 @@
           "nvm use v$(pbpaste)",
           "npm run test"
         ]
+      },
+      {
+        "name": "HU FE lint",
+        "icon": "code",
+        "open": true,
+        "focus": true,
+        "commands": [
+          "pbcopy < .nvmrc",
+          "nvm use v$(pbpaste)",
+          "npm run lint:script"
+        ]
       }
     ]
   }

@@ -1,12 +1,12 @@
 <template>
   <button
     :class="$style[`button--${props.type}--${props.size}`]"
-    @click.prevent="emit('click')"
     :disabled="disabled"
     :aria-disabled="disabled"
     :tabindex="disabled ? -1 : 0"
+    @click.prevent="emit('click')"
   >
-    {{label}}
+    {{ label }}
   </button>
 </template>
 

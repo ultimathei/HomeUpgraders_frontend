@@ -6,9 +6,13 @@
 </script>
 
 <template>
-  <Story title="Atoms/HUButton" :layout="{ type: 'grid' }">
+  <Story
+    title="Atoms/HUButton"
+    :layout="{ type: 'grid' }"
+  >
     <Variant
       v-for="scenario of scenarios"
+      :key="scenario.label"
       :title="scenario.label"
       :init-state="() => scenario"
     >

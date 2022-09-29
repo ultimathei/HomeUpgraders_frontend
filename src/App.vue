@@ -1,11 +1,13 @@
 <template>
-  <div :style="{
+  <div
+    :style="{
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       height: '100%'
-    }">
-    <router-view name="main"/>
+    }"
+  >
+    <router-view name="main" />
   </div>
 </template>
 

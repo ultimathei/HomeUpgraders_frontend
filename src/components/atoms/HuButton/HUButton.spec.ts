@@ -3,6 +3,7 @@ import RootComp from './HUButton.vue'
 import scenarios from './HUButton.scenarios'
 
 describe('Test Suite for HuButton', () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const wrapper: VueWrapper<any> = mount(RootComp,
     { props: scenarios[0] || {} }
   )
