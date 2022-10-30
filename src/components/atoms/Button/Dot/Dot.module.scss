@@ -1,0 +1,33 @@
+.button {
+  --bg-color: transparent;
+  --border-color: var(--hup-color--black, #333333);
+  --font-size: 1rem;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size);
+  padding: 0.5em;
+
+  span {
+    background-color: var(--bg-color);
+    border: 3px solid var(--border-color);
+    border-radius: 9999px;
+    display: block;
+    height: 2em;
+    width: 2em;
+  }
+  
+  &:is(:hover, :focus, :focus-within):not(:disabled):not(&[aria-current]) {
+    --bg-color: var(--hup-color--blue, #649BAD);
+    --border-color: var(--bg-color);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  &[aria-current] {
+    --bg-color: var(--hup-color--black, #333333);
+    --border-color: var(--bg-color);
+  }
+}
