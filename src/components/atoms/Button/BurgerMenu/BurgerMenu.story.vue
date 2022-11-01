@@ -31,7 +31,11 @@
         </div>
       </template>
       <template #default="{ state }">
-        <div style="background-color: #4D9973; padding: 24px; border-radius: 4px;">
+        <div
+          data-explainer="I am just a wrapper in order to display the component 
+          on a dark background. Please ignore me"
+          style="background-color: #4D9973; padding: 24px; border-radius: 4px;"
+        >
           <BurgerMenu
             :label="state.label"
             :open="state.open"
