@@ -4,9 +4,8 @@ import scenarios from './HUButton.scenarios'
 
 describe('Test Suite for HuButton', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const wrapper: VueWrapper<any> = mount(RootComp,
-    { props: scenarios[0] || {} }
-  )
+  let wrapper: VueWrapper<any>
+  beforeEach(() => wrapper = mount(RootComp, { props: {} }))
   // tests
   it('should display correct button label', async () => {
     const button = wrapper.find('button')

@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
   // import { onMounted, reactive } from 'vue'
   // fetch the config json
   // set css variables based on config json
@@ -37,4 +37,4 @@
   //     '--hu-color--white': config.colors.white,
   //   }
   // })
-</script>
+</script> -->

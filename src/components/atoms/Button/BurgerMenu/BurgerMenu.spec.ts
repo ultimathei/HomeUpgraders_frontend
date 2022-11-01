@@ -1,23 +1,23 @@
 import { mount, VueWrapper } from '@vue/test-utils'
-import RootComp from './Dot.vue'
-import scenarios from './Dot.scenarios'
+import RootComp from './BurgerMenu.vue'
+import scenarios from './BurgerMenu.scenarios'
 
-describe('Test Suite for Atom/Button/Dot', () => {
+describe('Test Suite for Atom/Button/BurgerMenu', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let wrapper: VueWrapper<any>
   beforeEach(() => wrapper = mount(RootComp, { props: {} }))
   // tests
   it('should render correct aria-label', async () => {
-    const button = wrapper.find('button')
     await wrapper.setProps(scenarios[0])
+    const button = wrapper.find('button')
     expect(button.attributes('aria-label')).toEqual(scenarios[0].label)
 
     await wrapper.setProps(scenarios[1])
     expect(button.attributes('aria-label')).toEqual(scenarios[1].label)
   })
   it('should take disabled status based on prop', async () => {
-    const button = wrapper.find('button')
     await wrapper.setProps(scenarios[0])
+    const button = wrapper.find('button')
     expect(button.element.disabled).toBe(false)
     expect(button.attributes('tabindex')).toBe('0')
     expect(button.attributes('aria-disabled')).toBe(undefined)
@@ -27,13 +27,13 @@ describe('Test Suite for Atom/Button/Dot', () => {
     expect(button.attributes('tabindex')).toBe('-1')
     expect(button.attributes('aria-disabled')).toBe('true')
   })
-  it('should take active status based on prop', async () => {
-    const button = wrapper.find('button')
+  it('should take open status based on prop', async () => {
     await wrapper.setProps(scenarios[0])
-    expect(button.attributes('aria-current')).toBe(undefined)
-
+    const button = wrapper.find('button')
+    expect(button.attributes()['data-open']).toBe(undefined)
+    
     await wrapper.setProps(scenarios[1])
-    expect(button.attributes('aria-current')).toBe('true')
+    expect(button.attributes()['data-open']).toBe('true')
   })
   it('emits click event', async () => {
     const button = wrapper.find('button')
