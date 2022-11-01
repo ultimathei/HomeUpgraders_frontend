@@ -11,7 +11,7 @@
     "story:build": "histoire build",
     "story:preview": "histoire preview",
     "lint:script": "eslint --ext .ts,vue",
-    "test": "jest src --coverage"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "vue": "^3.2.37",
