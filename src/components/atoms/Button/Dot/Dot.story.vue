@@ -1,6 +1,5 @@
 <script lang="ts" setup>
   import Dot from './Dot.vue'
-  import { hstEvent } from 'histoire/client'
   import scenarios from './Dot.scenarios'
 </script>
 
@@ -36,7 +35,7 @@
           :label="state.label"
           :active="state.active"
           :disabled="state.disabled"
-          @click="hstEvent('Click', $event)"
+          @click="state.active = !state.active"
         />
       </template>
     </Variant>
