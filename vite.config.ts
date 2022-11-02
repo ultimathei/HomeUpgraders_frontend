@@ -2,12 +2,14 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint'
 import path from 'path'
+import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@Assets': path.resolve(__dirname, './src/assets'),
       '@Components': path.resolve(__dirname, 'src/components'),
       '@Atoms': path.resolve(__dirname, 'src/components/atoms'),
       '@Molecules': path.resolve(__dirname, 'src/components/molecules'),
@@ -25,6 +27,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    eslintPlugin()
+    eslintPlugin(),
+    svgLoader()
   ]
 })

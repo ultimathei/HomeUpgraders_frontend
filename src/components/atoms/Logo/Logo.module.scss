@@ -1,0 +1,41 @@
+.logo {
+  --color: var(--hup-color--white, #ffffff);
+  --logo-size: 5em;
+  --text-size: 2em;
+  --flex-flow: column;
+  color: var(--color);
+  fill: var(--color);
+  font-size: 1rem;
+  display: flex;
+  flex-flow: var(--flex-flow);
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+
+  &__graphics {
+    height: var(--logo-size);
+    width: var(--logo-size);
+  }
+
+  em {
+    font-family: 'Futura', sans-serif;
+    font-size: var(--text-size);
+    line-height: 1.2em;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  &[data-size="m"] {
+    --logo-size: 3em;
+    --text-size: 1.25em;
+    --flex-flow: row;
+
+    em {
+      text-align: left;
+      width: 6em;
+    }
+  }
+}
+
