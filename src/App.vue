@@ -1,14 +1,5 @@
 <template>
-  <div
-    :style="{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100%'
-    }"
-  >
-    <router-view name="main" />
-  </div>
+  <router-view name="main" />
 </template>
 
 <!-- <script setup lang="ts">

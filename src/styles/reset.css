@@ -79,8 +79,12 @@ select {
 }
 
 #app {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
   font-size: 16px;
+  height: 100vh;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100vw;
 }
