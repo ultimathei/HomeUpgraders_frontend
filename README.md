@@ -11,7 +11,7 @@ The application is a simple website to showcase what the company is capable of.
 Before you begin development, ensure you have met the following requirements:
 
 - nvm 0.37.2
-- npm 8.5.5
+- npm 8.5.5 (You may need to install this specifically: `npm install -g npm@8.5.5`)
 - install node v16.15.0 through nvm
 
 ## Technologies used
