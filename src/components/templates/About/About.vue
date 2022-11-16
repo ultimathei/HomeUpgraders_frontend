@@ -9,11 +9,9 @@
 <template>
   <section :class="$style.section">
     <SectionHeading
-      :class="$style.heading"
       text="About"
     />
     <SliderControl
-      :class="$style.controls"
       label="My slider"
       :size="4"
       :active="activeSlider"
@@ -22,4 +20,4 @@
   </section>
 </template>
 
-<style src="./About.module.scss" module lang="scss"/>
+<style src="./About.module.scss" module lang="scss" />

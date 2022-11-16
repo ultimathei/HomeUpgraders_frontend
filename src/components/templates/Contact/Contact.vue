@@ -5,11 +5,10 @@ import SectionHeading from '@Atoms/Heading/Section/Section.vue'
 <template>
   <section :class="$style.section">
     <SectionHeading
-      :class="$style.heading"
       text="Contact"
       :light="true"
     />
   </section>
 </template>
 
-<style src="./Contact.module.scss" module lang="scss"/>
+<style src="./Contact.module.scss" module lang="scss" />
