@@ -1,0 +1,14 @@
+.menu {
+  background-color: var(--hup-color--green);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  z-index: 9;
+  transition: right 0.3s ease-in-out;
+
+  &[aria-expanded="true"] {
+    right: 0;
+  }
+}

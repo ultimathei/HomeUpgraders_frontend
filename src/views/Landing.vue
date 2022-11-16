@@ -1,10 +1,13 @@
 <template>
-  <!-- aside/nav -->
   <SiteHeader
     id="site-header"
     :menu-open="menuOpen"
     :logo-visible="headerHasBackground"
     @click="clickBurgerMenuBtn"
+  />
+  <SiteMenu
+    id="site-menu"
+    :open="menuOpen"
   />
   <main id="site-main">
     <Home
@@ -26,6 +29,7 @@
   import References from '@Templates/References/References.vue'
   import SiteHeader from '@Templates/Header/Header.vue'
   import SiteFooter from '@Templates/Footer/Footer.vue'
+  import SiteMenu from '@Templates/Menu/Menu.vue'
   
   // Menu
   const menuOpen = ref(false)

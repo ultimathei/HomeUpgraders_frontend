@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import Logo from '@Atoms/Logo/Logo.vue'
   import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
-  const emits = defineEmits(['scrollToAbout'])
+  defineEmits(['scrollToAbout'])
 </script>
 
 <template>
@@ -16,9 +16,7 @@
       <h2>Upgrading the world around You</h2>
       <div :class="$style.arrow">
         <span />
-        <button @click.prevent="$emit('scrollToAbout')">
-          <em>Click or scroll to see more</em>
-        </button>
+        <button @click.prevent="$emit('scrollToAbout')" />
       </div>
     </div>
     <video
