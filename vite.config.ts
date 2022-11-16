@@ -18,6 +18,7 @@ export default defineConfig({
       '@Views': path.resolve(__dirname, 'src/views')
     },
   },
+  assetsInclude: ['**/*.mp4'],
   css: {
     preprocessorOptions: {
       scss: {

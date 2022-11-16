@@ -3,14 +3,14 @@
   --logo-size: 5em;
   --text-size: 2em;
   --flex-flow: column;
-  color: var(--color);
-  fill: var(--color);
-  font-size: 1rem;
-  display: flex;
-  flex-flow: var(--flex-flow);
-  justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  color: var(--color);
+  display: flex;
+  fill: var(--color);
+  flex-flow: var(--flex-flow);
+  font-size: 1rem;
+  gap: 1em;
+  justify-content: center;
 
   &__graphics {
     height: var(--logo-size);

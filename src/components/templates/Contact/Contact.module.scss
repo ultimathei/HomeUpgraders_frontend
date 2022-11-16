@@ -1,0 +1,12 @@
+.section {
+  background-color: var(--hup-color--pink);
+  min-height: 43.75rem;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.heading {
+  margin-top: 3.875rem;
+}

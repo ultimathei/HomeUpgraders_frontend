@@ -1,0 +1,16 @@
+.section {
+  background-color: var(--hup-color--whitesmoke);
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  min-height: 37.5rem;
+}
+
+.heading {
+  margin-top: 3.875rem;
+}
+
+.controls {
+  margin-bottom: 2rem;
+}

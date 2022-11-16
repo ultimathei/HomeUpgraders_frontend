@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  color: var(--hup-color--white);
+  padding: 1.5rem;
+  background-color: var(--hup-color--black);
+
+  p {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 100;
+  }
+}

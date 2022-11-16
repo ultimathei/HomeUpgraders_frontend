@@ -22,7 +22,10 @@
   --hu-font-size--l: 1.2em;
   --hu-font-size--xl: 1.4em;
 
-  font-size: 16px;
+  // ROOT STYLES
+  background-color: var(--hup-color--black);
+  font-size: 12px;
+  font-family: "Futura", sans-serif;
 }
 
 #app {
