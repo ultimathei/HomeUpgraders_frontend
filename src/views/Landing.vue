@@ -33,14 +33,13 @@
 
   // Home
   const scrollToAbout = () => {
-    const elmntToView = document.getElementById("section-about")
-    elmntToView?.scrollIntoView()
+    window.scrollTo(0, window.innerHeight - 48)
   }
 
   // Intersection observer
   const headerHasBackground = ref(false)
-  const doSmth = (entries: any[]) => {
-    entries.forEach((entry: { isIntersecting: any }) => {
+  const doSmth = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry: IntersectionObserverEntry) => {
       headerHasBackground.value = !entry.isIntersecting
     })
   }
@@ -54,6 +53,6 @@
     observer.observe(elmntToView as Element)
   })
   onUnmounted(() => {
-    observer.unobserve()
+    observer.disconnect()
   })
 </script>
