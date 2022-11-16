@@ -10,7 +10,12 @@
 </script>
 
 <template>
-  <header :class="$style.header">
+  <header
+    :class="[
+      $style.header,
+      {[$style['header--open']]: logoVisible}
+    ]"
+  >
     <Logo
       :class="{[$style.hidden]: !logoVisible}"
       :with-text="true"

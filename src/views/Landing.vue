@@ -3,7 +3,7 @@
   <SiteHeader
     id="site-header"
     :menu-open="menuOpen"
-    :logo-visible="false"
+    :logo-visible="headerHasBackground"
     @click="clickBurgerMenuBtn"
   />
   <main id="site-main">
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { onMounted, onUnmounted, ref } from 'vue'
   import About from '@Templates/About/About.vue'
   import Contact from '@Templates/Contact/Contact.vue'
   import Home from '@Templates/Home/Home.vue'
@@ -33,7 +33,27 @@
 
   // Home
   const scrollToAbout = () => {
-    const elmntToView = document.getElementById("section-about");
-    elmntToView?.scrollIntoView();
+    const elmntToView = document.getElementById("section-about")
+    elmntToView?.scrollIntoView()
   }
+
+  // Intersection observer
+  const headerHasBackground = ref(false)
+  const doSmth = (entries: any[]) => {
+    entries.forEach((entry: { isIntersecting: any }) => {
+      headerHasBackground.value = !entry.isIntersecting
+    })
+  }
+  const options = {
+    rootMargin: '-56px',
+    threshold: 0
+  }
+  const observer = new IntersectionObserver(doSmth, options)
+  onMounted(() => {
+    const elmntToView = document.getElementById("section-home")
+    observer.observe(elmntToView as Element)
+  })
+  onUnmounted(() => {
+    observer.unobserve()
+  })
 </script>
