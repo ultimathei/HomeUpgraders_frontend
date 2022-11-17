@@ -3,7 +3,12 @@
     :class="$style.menu"
     :aria-expanded="open"
   >
-    menu here
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact</a></li>
+      <li><a href="">References</a></li>
+    </ul>
   </aside>
 </template>
 
@@ -11,7 +16,7 @@
   defineProps({
     open: Boolean,
   })
-  // const emit = defineEmits(['close'])
+  // defineEmits(['close'])
 </script>
 
 <style src="./Menu.module.scss" module lang="scss" />

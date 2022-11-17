@@ -2,7 +2,8 @@
   <SiteHeader
     id="site-header"
     :menu-open="menuOpen"
-    :logo-visible="headerHasBackground"
+    :with-logo="menuOpen || headerHasBackground"
+    :with-background="!menuOpen && headerHasBackground"
     @click="clickBurgerMenuBtn"
   />
   <SiteMenu

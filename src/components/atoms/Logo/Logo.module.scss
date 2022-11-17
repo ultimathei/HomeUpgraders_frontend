@@ -1,5 +1,5 @@
 .logo {
-  --color: var(--hup-color--white, #ffffff);
+  --color: rgb(var(--hup-color--white));
   --logo-size: 5em;
   --text-size: 2em;
   --flex-flow: column;

@@ -1,6 +1,6 @@
 .button {
   --bg-color: transparent;
-  --border-color: var(--hup-color--black, #333333);
+  --border-color: rgb(var(--hup-color--black));
   --font-size: 1rem;
   appearance: none;
   background: none;
@@ -19,13 +19,13 @@
   }
   
   &:is(:hover, :focus, :focus-within):not(:disabled):not(&[aria-current]) {
-    --bg-color: var(--hup-color--blue, #649BAD);
+    --bg-color: rgb(var(--hup-color--blue));
     --border-color: var(--bg-color);
   }
   &:focus-visible {
     outline: none;
     span {
-      outline: 2px var(--hup-color--blue, #649BAD) solid;
+      outline: 2px rgb(var(--hup-color--blue)) solid;
       outline-offset: 4px;
     }
   }
@@ -34,7 +34,7 @@
     opacity: 0.5;
   }
   &[aria-current] {
-    --bg-color: var(--hup-color--black, #333333);
+    --bg-color: rgb(var(--hup-color--black));
     --border-color: var(--bg-color);
   }
 }

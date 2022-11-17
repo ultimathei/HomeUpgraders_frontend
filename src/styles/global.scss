@@ -1,20 +1,36 @@
 :root {
   // COLORS
   // from XD doc
-  --hup-color--black: #333333;
-  --hup-color--white: #FFFFFF;
-  --hup-color--green: #4D9973;
-  --hup-color--purple: #7F3357;
-  --hup-color--pink: #B47C70;
-  --hup-color--babypink: #E8A7A1;
-  --hup-color--pink-bright: #D9629A;
-  --hup-color--whitesmoke: #F5F5F5;
-  --hup-color--gold: #B5A268;
-  --hup-color--copper: #B38359;
-  --hup-color--blue: #649BAD;
-  --hup-color--butter: #FFFFDD;
-  --hup-color--avocado: #DDEEAA;
-  --hup-color--greysmoke: #C6C5B9;
+  // --hup-color--black: #333333;
+  // --hup-color--white: #FFFFFF;
+  // --hup-color--green: #4D9973;
+  // --hup-color--purple: #7F3357;
+  // --hup-color--pink: #B47C70;
+  // --hup-color--babypink: #E8A7A1;
+  // --hup-color--pink-bright: #D9629A;
+  // --hup-color--whitesmoke: #F5F5F5;
+  // --hup-color--gold: #B5A268;
+  // --hup-color--copper: #B38359;
+  // --hup-color--blue: #649BAD;
+  // --hup-color--butter: #FFFFDD;
+  // --hup-color--avocado: #DDEEAA;
+  // --hup-color--greysmoke: #C6C5B9;
+  --hup-color--black: 51, 51, 51;
+  --hup-color--white: 255, 255, 255;
+  --hup-color--green: 77, 153, 115;
+  --hup-color--purple: 17, 51, 87;
+  --hup-color--pink: 180, 124, 112;
+  --hup-color--babypink: 232, 167, 161;
+  --hup-color--pink-bright: 217, 98, 154;
+  --hup-color--whitesmoke: 245, 245, 245;
+  --hup-color--gold: 181, 162, 104;
+  --hup-color--copper: 179, 131, 89;
+  --hup-color--blue: 100, 155, 173;
+  --hup-color--butter: 255, 255, 221;
+  --hup-color--avocado: 221, 238, 170;
+  --hup-color--greysmoke: 198, 197, 185;
+
+  --test: 77, 153, 115;
 
   // FONTS
   --hu-font-size--s: 0.8em;
@@ -23,7 +39,7 @@
   --hu-font-size--xl: 1.4em;
 
   // ROOT STYLES
-  background-color: var(--hup-color--black);
+  background-color: rgb(var(--hup-color--black));
   font-size: 12px;
   font-family: "Futura", sans-serif;
 }
@@ -36,6 +52,16 @@
   overflow-x: hidden;
   position: absolute;
   width: 100vw;
+}
+
+*::-moz-selection { /* Code for Firefox */
+  background: rgb(var(--hup-color--green));
+  color: rgb(var(--hup-color--white));
+}
+
+*::selection {
+  background: rgb(var(--hup-color--green));
+  color: rgb(var(--hup-color--white));
 }
 
 // @import 'colors/colors';

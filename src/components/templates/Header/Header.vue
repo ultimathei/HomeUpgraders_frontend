@@ -4,7 +4,8 @@
   import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
   defineProps({
     menuOpen: Boolean,
-    logoVisible: Boolean,
+    withLogo: Boolean,
+    withBackground: Boolean,
   })
   const emit = defineEmits(['click'])
 </script>
@@ -13,11 +14,11 @@
   <header
     :class="[
       $style.header,
-      {[$style['header--open']]: logoVisible}
+      {[$style['header--open']]: withBackground}
     ]"
   >
     <Logo
-      :class="{[$style.hidden]: !logoVisible}"
+      :class="{[$style.hidden]: !withLogo}"
       :with-text="true"
       :size="LogoSize.m"
     />

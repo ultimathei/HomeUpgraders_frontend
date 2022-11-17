@@ -1,5 +1,5 @@
 .heading {
-  --color: var(--hup-color--black, #333333);
+  --color: rgb(var(--hup-color--black));
   --font-size: 1.875rem;
   background: none;
   border-radius: 0.266em;
@@ -17,6 +17,6 @@
   justify-content: center;
 
   &[data-light="true"] {
-    --color: var(--hup-color--white, #FFFFFF);
+    --color: rgb(var(--hup-color--white));
   }
 }
