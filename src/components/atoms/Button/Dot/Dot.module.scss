@@ -19,13 +19,13 @@
   }
 
   &:is(:hover, :focus, :focus-within):not(:disabled):not(&[aria-current]) {
-    --bg-color: rgb(var(--hup-color--blue));
+    --bg-color: rgb(var(--hup-color--green));
     --border-color: var(--bg-color);
   }
   &:focus-visible {
     outline: none;
     span {
-      outline: 2px rgb(var(--hup-color--blue)) solid;
+      outline: 2px rgb(var(--hup-color--green)) solid;
       outline-offset: 4px;
     }
   }

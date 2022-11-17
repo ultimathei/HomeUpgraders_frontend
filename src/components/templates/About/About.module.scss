@@ -5,6 +5,46 @@
   flex-flow: column nowrap;
   justify-content: space-between;
   min-height: 37.5rem;
+  padding: 2rem;
   padding-top: 3.875rem;
-  padding-bottom: 2rem;
+  overflow: hidden;
+  gap: 2.5rem;
+}
+
+.article {
+  max-width: 50rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  
+  p {
+    font-size: 1.25rem;
+    white-space: preline;
+  }
+
+  .p--large {
+    font-size: 1.875rem;
+  }
+  .p--narrow {
+    max-width: 26em;
+  }
+  .p--narrowest {
+    max-width: 20em;
+  }
+  .p--accent {
+    color: rgb(var(--hup-color--green));
+  }
+
+  &--grid {
+    align-items: start;
+    align-self: start;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 10vw;
+    text-align: left;
+  }
 }
