@@ -15,6 +15,7 @@
   <main id="site-main">
     <Home
       id="section-home"
+      :visible="headerHasBackground"
       @scroll-to-about="scrollToSection('section-about')"
     />
     <About id="section-about" />

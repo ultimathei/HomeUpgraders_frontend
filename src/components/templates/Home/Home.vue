@@ -1,7 +1,24 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue'
 import Logo from '@Atoms/Logo/Logo.vue'
 import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
+const props = defineProps({
+  visible: Boolean,
+})
 defineEmits(['scrollToAbout'])
+
+// pause video playback when offscreen
+// play when onscreen
+const video = ref(null)
+watch(
+  () => props.visible,
+  (visible) => {
+    if (!video.value) return
+    visible
+      ? (video.value as HTMLVideoElement).pause()
+      : (video.value as HTMLVideoElement).play()
+  }
+)
 </script>
 
 <template>
@@ -20,6 +37,8 @@ defineEmits(['scrollToAbout'])
       </div>
     </div>
     <video
+      id="home-video-background"
+      ref="video"
       width="100%"
       height="100%"
       autoplay
