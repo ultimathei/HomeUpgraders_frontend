@@ -10,7 +10,7 @@
 
   &[aria-selected='true'] {
     background-color: rgb(var(--hup-color--white));
-    color: rgb(var(--hup-color--green));
+    color: rgb(var(--hup-color--black));
   }
 
   &:is(:hover, :focus, :focus-within):not(&[aria-selected='true']) {
