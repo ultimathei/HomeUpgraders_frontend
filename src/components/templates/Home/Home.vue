@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import Logo from '@Atoms/Logo/Logo.vue'
+import ButtonArrow from '@Atoms/Button/Arrow/Arrow.vue'
 import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
 const props = defineProps({
   visible: Boolean,
@@ -31,10 +32,7 @@ watch(
     <div :class="$style['section__bottom']">
       <h1>IMPROVE — MAINTAIN — REFURBISH</h1>
       <h2>Upgrading the world around You</h2>
-      <div :class="$style.arrow">
-        <span />
-        <button @click.prevent="$emit('scrollToAbout')" />
-      </div>
+      <ButtonArrow @click="$emit('scrollToAbout')" />
     </div>
     <video
       id="home-video-background"
