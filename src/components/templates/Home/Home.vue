@@ -24,11 +24,11 @@ watch(
 <template>
   <section :class="$style.section">
     <Logo
-      :class="$style.logo"
+      :class="$style['section__top']"
       :with-text="true"
       :size="LogoSize.l"
     />
-    <div :class="$style.headings">
+    <div :class="$style['section__bottom']">
       <h1>IMPROVE — MAINTAIN — REFURBISH</h1>
       <h2>Upgrading the world around You</h2>
       <div :class="$style.arrow">
