@@ -12,8 +12,8 @@ watch(
   (visible) => {
     if (!video.value) return
     visible
-      ? (video.value as HTMLVideoElement).pause()
-      : (video.value as HTMLVideoElement).play()
+      ? (video.value as HTMLVideoElement).play()
+      : (video.value as HTMLVideoElement).pause()
   }
 )
 </script>

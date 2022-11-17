@@ -15,11 +15,14 @@
   <main id="site-main">
     <Home
       id="section-home"
-      :visible="headerHasBackground"
+      :visible="!headerHasBackground"
       @scroll-to-about="scrollToSection('section-about')"
     />
     <About id="section-about" />
-    <Contact id="section-contact" />
+    <Contact
+      id="section-contact"
+      :visible="activeMenuItem === 'contact'"
+    />
     <References id="section-references" />
   </main>
   <SiteFooter id="site-footer" />
