@@ -5,50 +5,47 @@
   >
     <ul>
       <li>
-        <a
-          href="#section-home"
-          :aria-selected="active === 'home'"
-          :tabindex="open ? 0 : -1"
-          @click.prevent="$emit('click', 'home')"
-        >
-          Home
-        </a>
+        <MenuItem
+          label="Home"
+          to-id="#section-home"
+          :active="active === 'home'"
+          :visible="open"
+          @click="$emit('click', 'home')"
+        />
       </li>
       <li>
-        <a
-          href="#section-about"
-          :aria-selected="active === 'about'"
-          :tabindex="open ? 0 : -1"
-          @click.prevent="$emit('click', 'about')"
-        >
-          About
-        </a>
+        <MenuItem
+          label="About"
+          to-id="#section-about"
+          :active="active === 'about'"
+          :visible="open"
+          @click="$emit('click', 'about')"
+        />
       </li>
       <li>
-        <a
-          href="#section-contact"
-          :aria-selected="active === 'contact'"
-          :tabindex="open ? 0 : -1"
-          @click.prevent="$emit('click', 'contact')"
-        >
-          Contact
-        </a>
+        <MenuItem
+          label="Contact"
+          to-id="#section-contact"
+          :active="active === 'contact'"
+          :visible="open"
+          @click="$emit('click', 'contact')"
+        />
       </li>
       <li>
-        <a
-          href="#section-references"
-          :aria-selected="active === 'references'"
-          :tabindex="open ? 0 : -1"
-          @click.prevent="$emit('click', 'references')"
-        >
-          References
-        </a>
+        <MenuItem
+          label="References"
+          to-id="#section-references"
+          :active="active === 'references'"
+          :visible="open"
+          @click="$emit('click', 'references')"
+        />
       </li>
     </ul>
   </aside>
 </template>
 
 <script setup lang="ts">
+  import MenuItem from '@Atoms/MenuItem/MenuItem.vue'
   defineProps({
     open: Boolean,
     active: {

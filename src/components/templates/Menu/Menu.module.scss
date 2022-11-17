@@ -33,25 +33,5 @@
     list-style-type: none;
     text-transform: uppercase;
     gap: 0.25rem;
-
-    a {
-      border: 0.25rem solid;
-      border-color: transparent;
-      border-radius: 0.5rem;
-      color: rgb(var(--hup-color--white));
-      font-size: 3rem;
-      padding: 0 1em;
-      text-align: center;
-      text-decoration: none;
-
-      &[aria-selected="true"] {
-        background-color: rgb(var(--hup-color--white));
-        color: rgb(var(--hup-color--green));
-      }
-
-      &:is(:hover, :focus, :focus-within):not(&[aria-selected="true"]) {
-        border-color: rgb(var(--hup-color--white));
-      }
-    }
   }
 }
