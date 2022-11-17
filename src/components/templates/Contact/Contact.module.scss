@@ -48,22 +48,13 @@
   }
 
   &::after {
+    background-color: rgb(var(--hup-color--pink));
     content: '';
     height: 100%;
     inset: 0;
+    mix-blend-mode: multiply;
     position: absolute;
     width: 100%;
-
-    /* slightly transparent fallback */
-    background-color: rgba(var(--hup-color--pink), 0.9);
-  
-    /* if backdrop support: more transparent and blurred */
-    @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
-      background-color: rgb(var(--hup-color--pink));
-      -webkit-backdrop-filter: blur(1rem);
-      backdrop-filter: blur(1rem);
-      mix-blend-mode: multiply;
-    }
   }
 
   video {
@@ -71,6 +62,7 @@
     position: absolute;
     width: 100%;
     object-fit: cover;
+    opacity: 0.25;
     z-index: 0;
     top: 0;
     left: 0;
