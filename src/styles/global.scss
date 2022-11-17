@@ -30,8 +30,6 @@
   --hup-color--avocado: 221, 238, 170;
   --hup-color--greysmoke: 198, 197, 185;
 
-  --test: 77, 153, 115;
-
   // FONTS
   --hu-font-size--s: 0.8em;
   --hu-font-size--m: 1em;
@@ -65,4 +63,6 @@
   color: rgb(var(--hup-color--white));
 }
 
-// @import 'colors/colors';
+*:focus-visible {
+  outline: rgb(var(--hup-color--green)) auto 0.125rem;
+}
