@@ -7,7 +7,9 @@ import SectionHeading from '@Atoms/Heading/Section/Section.vue'
     <SectionHeading
       text="References"
     />
-    <div :class="$style.gallery"></div>
+    <div :class="$style.gallery">
+      Gallery here
+    </div>
   </section>
 </template>
 

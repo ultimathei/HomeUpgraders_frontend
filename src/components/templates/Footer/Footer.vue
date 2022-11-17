@@ -8,4 +8,4 @@
   </footer>
 </template>
 
-<style src="./Footer.module.scss" module lang="scss"/>
+<style src="./Footer.module.scss" module lang="scss" />

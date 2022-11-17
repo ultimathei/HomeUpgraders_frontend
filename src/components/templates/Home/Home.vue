@@ -31,7 +31,7 @@
       <source
         :src="`src/assets/home_bg.mp4`"
         type="video/mp4"
-      />
+      >
     </video>
   </section>
 </template>
