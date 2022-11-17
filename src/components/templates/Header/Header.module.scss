@@ -13,6 +13,9 @@
 
   &--open {
     background-color: rgb(var(--hup-color--green));
+    background-image: url('src/assets/header_bg.png');
+    background-size: cover;
+    background-position: center;
   }
 }
 
