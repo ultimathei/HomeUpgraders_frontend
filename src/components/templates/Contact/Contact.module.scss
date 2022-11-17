@@ -11,6 +11,11 @@
   padding: 2rem;
   padding-top: 3.875rem;
   gap: 2.5rem;
+  position: relative;
+
+  * {
+    z-index: 1;
+  }
 
   p, a, address {
     color: rgb(var(--hup-color--white));
@@ -40,5 +45,35 @@
     &:is(:hover, :focus-visible, :focus, :focus-within) {
       text-decoration: underline;
     }
+  }
+
+  &::after {
+    content: '';
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+
+    /* slightly transparent fallback */
+    background-color: rgba(var(--hup-color--pink), 0.9);
+  
+    /* if backdrop support: more transparent and blurred */
+    @supports ((-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))) {
+      background-color: rgb(var(--hup-color--pink));
+      -webkit-backdrop-filter: blur(1rem);
+      backdrop-filter: blur(1rem);
+      mix-blend-mode: multiply;
+    }
+  }
+
+  video {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    z-index: 0;
   }
 }
