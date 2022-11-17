@@ -10,6 +10,16 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
 <template>
   <section :class="$style.section">
     <SectionHeading :text="headingLabels[activeSlider - 1 || 0]" />
+    <div :class="$style.cards">
+      <div
+        :class="[$style.card, $style['card--1']]"
+        :data-variation="activeSlider"
+      />
+      <div
+        :class="[$style.card, $style['card--2']]"
+        :data-variation="activeSlider"
+      />
+    </div>
     <article
       :class="$style.article"
       v-if="activeSlider === 1"
@@ -81,7 +91,7 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
         components
       </p>
     </article>
-    <div
+    <!-- <div
       :class="[$style.card, $style['card--1']]"
       :data-variation="activeSlider"
     />
@@ -96,7 +106,7 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
     <div
       :class="[$style.card, $style['card--4']]"
       :data-variation="activeSlider"
-    />
+    /> -->
     <SliderControl
       label="My slider"
       :size="4"
