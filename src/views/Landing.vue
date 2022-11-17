@@ -9,11 +9,13 @@
   <SiteMenu
     id="site-menu"
     :open="menuOpen"
+    :active="activeMenuItem"
+    @click="menuItemClick"
   />
   <main id="site-main">
     <Home
       id="section-home"
-      @scroll-to-about="scrollToAbout"
+      @scroll-to-about="scrollToSection('section-about')"
     />
     <About id="section-about" />
     <Contact id="section-contact" />
@@ -35,29 +37,45 @@
   // Menu
   const menuOpen = ref(false)
   const clickBurgerMenuBtn = () => menuOpen.value = !menuOpen.value
+  const menuItemClick = (key: string) => {
+    menuOpen.value = false
+    scrollToSection(`section-${key}`)
+  }
 
   // Home
-  const scrollToAbout = () => {
-    window.scrollTo(0, window.innerHeight - 48)
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) window.scrollTo(0, el?.offsetTop - 48)
   }
 
   // Intersection observer
   const headerHasBackground = ref(false)
-  const doSmth = (entries: IntersectionObserverEntry[]) => {
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry: IntersectionObserverEntry) => {
       headerHasBackground.value = !entry.isIntersecting
     })
   }
-  const options = {
+  const activeMenuItem = ref('home')
+  const handleSectionIntersection = (entries: IntersectionObserverEntry[]) => {
+    const entry = entries[0]
+    if (!entry.isIntersecting) return
+    activeMenuItem.value = entry.target.id.substring(8)
+  }
+  const observer = new IntersectionObserver(handleIntersection, {
     rootMargin: '-56px',
     threshold: 0
-  }
-  const observer = new IntersectionObserver(doSmth, options)
+  })
+  const sectionObserver = new IntersectionObserver(handleSectionIntersection, {
+    rootMargin: '-56px',
+    threshold: 0.5
+  })
   onMounted(() => {
-    const elmntToView = document.getElementById("section-home")
-    observer.observe(elmntToView as Element)
+    observer.observe(document.getElementById("section-home") as Element)
+    const sections = document.querySelectorAll("section")
+    sections.forEach(section => sectionObserver.observe(section as Element))
   })
   onUnmounted(() => {
     observer.disconnect()
+    sectionObserver.disconnect()
   })
 </script>

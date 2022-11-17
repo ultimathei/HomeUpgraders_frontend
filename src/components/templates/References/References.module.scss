@@ -4,7 +4,13 @@
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
+  gap: 3rem;
   justify-content: space-between;
-  padding-top: 3.875rem;
-  padding-bottom: 2rem;
+  padding: 3.875rem 5rem;
+}
+
+.gallery {
+  border: 1px dashed;
+  height: 600px;
+  width: 100%;
 }
