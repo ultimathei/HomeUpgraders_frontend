@@ -66,11 +66,9 @@ const handleSectionIntersection = (entries: IntersectionObserverEntry[]) => {
   activeMenuItem.value = entry.target.id.substring(8)
 }
 const observer = new IntersectionObserver(handleIntersection, {
-  rootMargin: '-56px',
-  threshold: 0,
+  threshold: 0.1,
 })
 const sectionObserver = new IntersectionObserver(handleSectionIntersection, {
-  rootMargin: '-56px',
   threshold: 0.5,
 })
 onMounted(() => {
