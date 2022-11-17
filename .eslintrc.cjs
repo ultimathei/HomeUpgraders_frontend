@@ -14,7 +14,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2021,
   },
-  plugins: [],
+  plugins: [
+    'prettier'
+  ],
   ignorePatterns: ['**/*.d.ts', '.gitignore .'],
   rules: {
     'vue/multi-word-component-names': 0,
