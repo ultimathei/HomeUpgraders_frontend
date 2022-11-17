@@ -30,5 +30,10 @@ export default defineConfig({
     vue(),
     eslintPlugin(),
     svgLoader()
-  ]
+  ],
+  server: {
+    watch: {
+      ignored: ['**/coverage/**'],
+    },
+  }
 })
