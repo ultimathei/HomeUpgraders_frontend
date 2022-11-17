@@ -68,38 +68,49 @@
 
   & > span {
     background-color: rgb(var(--hup-color--white));
+    border-radius: 1em;
     flex-grow: 1;
     width: 0.125rem;
   }
 
   & > button {
     appearance: none;
-    background: none;
+    background-color: transparent;
     border: none;
-    border-bottom: 0.125rem solid;
-    border-right: 0.125rem solid;
+    border-radius: 999rem;
     color: rgb(var(--hup-color--white));
     cursor: pointer;
-    height: 1.5rem;
+    height: 3rem;
     position: relative;
-    transform: rotate(45deg);
-    width: 1.5rem;
+    width: 3rem;
 
-    &:before {
+    &:is(:hover, :focus, :focus-within, :focus-visible) {
+      background-color: rgb(var(--hup-color--white));
+      color: rgb(var(--hup-color--green));
+    }
+
+    &::before {
       border-bottom: 0.125rem solid;
       border-right: 0.125rem solid;
       content: '';
-      height: 50%;
-      left: 0;
+      height: 1.5rem;
+      left: 0.75rem;
       position: absolute;
-      top: 0;
-      width: 50%;
+      top: 0.625rem;
+      transform: rotate(45deg);
+      width: 1.5rem;
     }
-
-    em {
-      width: 0px;
-      overflow: hidden;
-      opacity: 0;
+    
+    &::after {
+      border-bottom: 0.125rem solid;
+      border-right: 0.125rem solid;
+      content: '';
+      height: 0.75rem;
+      left: 1.125rem;
+      position: absolute;
+      top: 0.625rem;
+      transform: rotate(45deg);
+      width: 0.75rem;
     }
   }
 }
