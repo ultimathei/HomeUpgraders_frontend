@@ -45,15 +45,15 @@
 </template>
 
 <script setup lang="ts">
-  import MenuItem from '@Atoms/MenuItem/MenuItem.vue'
-  defineProps({
-    open: Boolean,
-    active: {
-      type: String,
-      default: 'home',
-    },
-  })
-  defineEmits(['click'])
+import MenuItem from '@Atoms/MenuItem/MenuItem.vue'
+defineProps({
+  open: Boolean,
+  active: {
+    type: String,
+    default: 'home',
+  },
+})
+defineEmits(['click'])
 </script>
 
 <style src="./Menu.module.scss" module lang="scss" />

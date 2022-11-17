@@ -5,7 +5,7 @@ import scenarios from './Logo.scenarios'
 describe('Test Suite for Atom/Logo', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let wrapper: VueWrapper<any>
-  beforeEach(() => wrapper = mount(RootComp, { props: {} }))
+  beforeEach(() => (wrapper = mount(RootComp, { props: {} })))
   // tests
   it('should render correct data-type for size', async () => {
     await wrapper.setProps(scenarios[0])

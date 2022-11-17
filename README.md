@@ -39,6 +39,7 @@ Using [Vue 3](https://vuejs.org/) `<script setup>` [Single File Components or SF
 # Installation
 
 In the project root run:
+
 ```
 npm install
 ```

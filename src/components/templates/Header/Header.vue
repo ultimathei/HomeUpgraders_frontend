@@ -1,24 +1,21 @@
 <script setup lang="ts">
-  import ButtonBurgerMenu from '@Atoms/Button/BurgerMenu/BurgerMenu.vue'
-  import Logo from '@Atoms/Logo/Logo.vue'
-  import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
-  defineProps({
-    menuOpen: Boolean,
-    withLogo: Boolean,
-    withBackground: Boolean,
-  })
-  const emit = defineEmits(['click'])
+import ButtonBurgerMenu from '@Atoms/Button/BurgerMenu/BurgerMenu.vue'
+import Logo from '@Atoms/Logo/Logo.vue'
+import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
+defineProps({
+  menuOpen: Boolean,
+  withLogo: Boolean,
+  withBackground: Boolean,
+})
+const emit = defineEmits(['click'])
 </script>
 
 <template>
   <header
-    :class="[
-      $style.header,
-      {[$style['header--open']]: withBackground}
-    ]"
+    :class="[$style.header, { [$style['header--open']]: withBackground }]"
   >
     <Logo
-      :class="{[$style.hidden]: !withLogo}"
+      :class="{ [$style.hidden]: !withLogo }"
       :with-text="true"
       :size="LogoSize.m"
     />

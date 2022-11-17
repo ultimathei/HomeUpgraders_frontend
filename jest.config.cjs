@@ -1,10 +1,5 @@
 module.exports = {
-  moduleFileExtensions: [
-    'js',
-    'ts',
-    'json',
-    'vue'
-  ],
+  moduleFileExtensions: ['js', 'ts', 'json', 'vue'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.ts$': 'ts-jest',
@@ -22,7 +17,7 @@ module.exports = {
     '^@Views/(.*)$': '<rootDir>/src/views/$1',
   },
   collectCoverage: true,
-  collectCoverageFrom: [ '**/*.{js,ts,vue}' ],
+  collectCoverageFrom: ['**/*.{js,ts,vue}'],
   coveragePathIgnorePatterns: [
     'node_modules',
     'coverage',

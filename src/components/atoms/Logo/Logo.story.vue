@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-  import Comp from './Logo.vue'
-  import scenarios from './Logo.scenarios'
+import Comp from './Logo.vue'
+import scenarios from './Logo.scenarios'
 </script>
 
 <template>
@@ -14,7 +14,7 @@
       :title="scenario.label"
       :init-state="() => scenario"
     >
-      <template #controls="{state}">
+      <template #controls="{ state }">
         <div>
           <HstCheckbox
             v-model="state.active"
@@ -34,7 +34,7 @@
         <div
           data-explainer="I am just a wrapper in order to display the component 
           on a dark background. Please ignore me"
-          style="background-color: #4D9973; padding: 24px; border-radius: 4px;"
+          style="background-color: #4d9973; padding: 24px; border-radius: 4px"
         >
           <Comp
             :size="state.size"

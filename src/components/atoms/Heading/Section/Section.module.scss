@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
 
-  &[data-light="true"] {
+  &[data-light='true'] {
     --color: rgb(var(--hup-color--white));
   }
 }

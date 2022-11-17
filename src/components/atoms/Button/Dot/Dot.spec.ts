@@ -5,7 +5,7 @@ import scenarios from './Dot.scenarios'
 describe('Test Suite for Atom/Button/Dot', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let wrapper: VueWrapper<any>
-  beforeEach(() => wrapper = mount(RootComp, { props: {} }))
+  beforeEach(() => (wrapper = mount(RootComp, { props: {} })))
   // tests
   it('should render correct aria-label', async () => {
     const button = wrapper.find('button')

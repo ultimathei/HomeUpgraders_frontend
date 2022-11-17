@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-  import Comp from './Slider.vue'
-  import scenarios from './Slider.scenarios'
+import Comp from './Slider.vue'
+import scenarios from './Slider.scenarios'
 </script>
 
 <template>
@@ -14,7 +14,7 @@
       :title="`Scenario - ${scenario.size}`"
       :init-state="() => scenario"
     >
-      <template #controls="{state}">
+      <template #controls="{ state }">
         <div>
           <HstNumber
             v-model="state.size"
@@ -40,7 +40,7 @@
           :size="state.size"
           :active="state.active"
           :disabled="state.disabled"
-          @set-active="(n) => state.active = n"
+          @set-active="(n) => (state.active = n)"
         />
       </template>
     </Variant>

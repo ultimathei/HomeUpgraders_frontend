@@ -1,47 +1,38 @@
 {
-    "autorun": false,
-    "env": {},
-    "terminals": [
-      {
-        "name": "HU FE dev",
-        "icon": "device-desktop",
-        "commands": [
-          "pbcopy < .nvmrc",
-          "nvm use v$(pbpaste)",
-          "npm run dev"
-        ]
-      },
-      {
-        "name": "HU story dev",
-        "icon": "book",
-        "commands": [
-          "pbcopy < .nvmrc",
-          "nvm use v$(pbpaste)",
-          "npm run story:dev"
-        ]
-      },
-      {
-        "name": "HU FE test",
-        "icon": "beaker",
-        "open": true,
-        "focus": true,
-        "commands": [
-          "pbcopy < .nvmrc",
-          "nvm use v$(pbpaste)",
-          "npm run test"
-        ]
-      },
-      {
-        "name": "HU FE lint",
-        "icon": "code",
-        "open": true,
-        "focus": true,
-        "commands": [
-          "pbcopy < .nvmrc",
-          "nvm use v$(pbpaste)",
-          "npm run lint:script"
-        ]
-      }
-    ]
-  }
-  
+  "autorun": false,
+  "env": {},
+  "terminals": [
+    {
+      "name": "HU FE dev",
+      "icon": "device-desktop",
+      "commands": ["pbcopy < .nvmrc", "nvm use v$(pbpaste)", "npm run dev"]
+    },
+    {
+      "name": "HU story dev",
+      "icon": "book",
+      "commands": [
+        "pbcopy < .nvmrc",
+        "nvm use v$(pbpaste)",
+        "npm run story:dev"
+      ]
+    },
+    {
+      "name": "HU FE test",
+      "icon": "beaker",
+      "open": true,
+      "focus": true,
+      "commands": ["pbcopy < .nvmrc", "nvm use v$(pbpaste)", "npm run test"]
+    },
+    {
+      "name": "HU FE lint",
+      "icon": "code",
+      "open": true,
+      "focus": true,
+      "commands": [
+        "pbcopy < .nvmrc",
+        "nvm use v$(pbpaste)",
+        "npm run lint:script"
+      ]
+    }
+  ]
+}

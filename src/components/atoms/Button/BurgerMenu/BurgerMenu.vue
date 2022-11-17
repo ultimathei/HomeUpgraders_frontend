@@ -15,18 +15,18 @@
 </template>
 
 <script setup lang="ts">
-  defineProps({
-    label: {
-      type: String,
-      default: '',
-    },
-    open: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: Boolean,
-  })
-  const emit = defineEmits(['click'])
+defineProps({
+  label: {
+    type: String,
+    default: '',
+  },
+  open: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: Boolean,
+})
+const emit = defineEmits(['click'])
 </script>
 
 <style src="./BurgerMenu.module.scss" module lang="scss"></style>

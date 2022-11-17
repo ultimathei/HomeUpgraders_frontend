@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-  import Dot from './Dot.vue'
-  import scenarios from './Dot.scenarios'
+import Dot from './Dot.vue'
+import scenarios from './Dot.scenarios'
 </script>
 
 <template>
@@ -14,7 +14,7 @@
       :title="scenario.label"
       :init-state="() => scenario"
     >
-      <template #controls="{state}">
+      <template #controls="{ state }">
         <div>
           <HstCheckbox
             v-model="state.active"

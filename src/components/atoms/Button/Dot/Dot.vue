@@ -13,15 +13,15 @@
 </template>
 
 <script setup lang="ts">
-  defineProps({
-    label: {
-      type: String,
-      default: '',
-    },
-    active: Boolean,
-    disabled: Boolean,
-  })
-  const emit = defineEmits(['click'])
+defineProps({
+  label: {
+    type: String,
+    default: '',
+  },
+  active: Boolean,
+  disabled: Boolean,
+})
+const emit = defineEmits(['click'])
 </script>
 
 <style src="./Dot.module.scss" module lang="scss"></style>

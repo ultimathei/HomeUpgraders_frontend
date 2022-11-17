@@ -41,7 +41,7 @@
   // ROOT STYLES
   background-color: rgb(var(--hup-color--black));
   font-size: 12px;
-  font-family: "Futura", sans-serif;
+  font-family: 'Futura', sans-serif;
 }
 
 #app {
@@ -54,7 +54,8 @@
   width: 100vw;
 }
 
-*::-moz-selection { /* Code for Firefox */
+*::-moz-selection {
+  /* Code for Firefox */
   background: rgb(var(--hup-color--green));
   color: rgb(var(--hup-color--white));
 }

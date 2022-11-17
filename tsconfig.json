@@ -13,10 +13,7 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "types": [
-      "vite/client",
-      "@types/jest"
-    ],
+    "types": ["vite/client", "@types/jest"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],

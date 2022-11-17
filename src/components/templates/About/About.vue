@@ -1,16 +1,14 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import SectionHeading from '@Atoms/Heading/Section/Section.vue'
-  import SliderControl from '@Molecules/Control/Slider/Slider.vue'
-  const activeSlider = ref(1)
-  const clickButton = (n: number) => activeSlider.value = n
+import { ref } from 'vue'
+import SectionHeading from '@Atoms/Heading/Section/Section.vue'
+import SliderControl from '@Molecules/Control/Slider/Slider.vue'
+const activeSlider = ref(1)
+const clickButton = (n: number) => (activeSlider.value = n)
 </script>
 
 <template>
   <section :class="$style.section">
-    <SectionHeading
-      text="About"
-    />
+    <SectionHeading text="About" />
     <SliderControl
       label="My slider"
       :size="4"

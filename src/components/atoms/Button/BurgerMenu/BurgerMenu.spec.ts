@@ -5,7 +5,7 @@ import scenarios from './BurgerMenu.scenarios'
 describe('Test Suite for Atom/Button/BurgerMenu', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let wrapper: VueWrapper<any>
-  beforeEach(() => wrapper = mount(RootComp, { props: {} }))
+  beforeEach(() => (wrapper = mount(RootComp, { props: {} })))
   // tests
   it('should render correct aria-label', async () => {
     await wrapper.setProps(scenarios[0])
@@ -31,7 +31,7 @@ describe('Test Suite for Atom/Button/BurgerMenu', () => {
     await wrapper.setProps(scenarios[0])
     const button = wrapper.find('button')
     expect(button.attributes()['data-open']).toBe(undefined)
-    
+
     await wrapper.setProps(scenarios[1])
     expect(button.attributes()['data-open']).toBe('true')
   })

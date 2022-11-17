@@ -11,20 +11,20 @@
 </template>
 
 <script setup lang="ts">
-  defineProps({
-    label: {
-      type: String,
-      required: true,
-    },
-    toId: {
-      type: String,
-      required: true,
-    },
-    active: Boolean,
-    visible: Boolean,
-    disabled: Boolean,
-  })
-  defineEmits(['click'])
+defineProps({
+  label: {
+    type: String,
+    required: true,
+  },
+  toId: {
+    type: String,
+    required: true,
+  },
+  active: Boolean,
+  visible: Boolean,
+  disabled: Boolean,
+})
+defineEmits(['click'])
 </script>
 
 <style src="./MenuItem.module.scss" module lang="scss"></style>

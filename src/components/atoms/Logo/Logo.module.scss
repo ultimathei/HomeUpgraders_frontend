@@ -27,7 +27,7 @@
     font-style: normal;
   }
 
-  &[data-size="m"] {
+  &[data-size='m'] {
     --logo-size: 3em;
     --text-size: 1.25em;
     --flex-flow: row;
@@ -39,4 +39,3 @@
     }
   }
 }
-

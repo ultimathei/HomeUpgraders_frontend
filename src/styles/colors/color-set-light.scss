@@ -23,32 +23,39 @@
 
   --hu-light-background-700: #000000;
   --hu-light-background-600: #161616;
-  --hu-light-background-500: #2C2C2C;
+  --hu-light-background-500: #2c2c2c;
   --hu-light-background-400: #393939;
   --hu-light-background-300: #bdbdbd;
   --hu-light-background-200: #e0e0e0;
   --hu-light-background-100: #eeeeee;
-  --hu-light-background-50:  #FFFFFF;
+  --hu-light-background-50: #ffffff;
 
   --hu-light-overlay-01: rgba(0, 0, 0, 0.55);
   --hu-light-overlay-02: rgba(0, 0, 0, 0.32);
 
   --hu-light-onlight-01: rgba(0, 0, 0, 0.88);
-  --hu-light-onlight-02: rgba(0, 0, 0, 0.50);
+  --hu-light-onlight-02: rgba(0, 0, 0, 0.5);
   --hu-light-onlight-03: rgba(0, 0, 0, 0.38);
   --hu-light-onlight-04: rgba(0, 0, 0, 0.12);
 
   --hu-light-ondark-01: rgba(255, 255, 255, 0.88);
-  --hu-light-ondark-02: rgba(255, 255, 255, 0.50);
+  --hu-light-ondark-02: rgba(255, 255, 255, 0.5);
   --hu-light-ondark-03: rgba(255, 255, 255, 0.38);
   --hu-light-ondark-04: rgba(255, 255, 255, 0.12);
 
-  --hu-light-shadow-01: 0 1px 5px 0 rgba(33, 34, 66, 0.04), 0 0 3px 0 rgba(0, 0, 0, 0.08), 0 2px 1px 0 rgba(0, 0, 0, 0.12);
-  --hu-light-shadow-02: 0 3px 5px -3px rgba(33, 34, 66, 0.04), 0 3px 14px 2px rgba(0, 0, 0, 0.08), 0 8px 10px 1px rgba(0, 0, 0, 0.12);
-  --hu-light-shadow-03: 0 6px 10px -5px rgba(0, 0, 0, 0.04), 0 6px 30px 5px rgba(0, 0, 0, 0.08), 0 16px 24px 2px rgba(0, 0, 0, 0.12);
-  --hu-light-shadow-04: 0 9px 15px -7px rgba(0, 0, 0, 0.04), 0 9px 46px 8px rgba(0, 0, 0, 0.08), 0 24px 38px 3px rgba(0, 0, 0, 0.12);
+  --hu-light-shadow-01: 0 1px 5px 0 rgba(33, 34, 66, 0.04),
+    0 0 3px 0 rgba(0, 0, 0, 0.08), 0 2px 1px 0 rgba(0, 0, 0, 0.12);
+  --hu-light-shadow-02: 0 3px 5px -3px rgba(33, 34, 66, 0.04),
+    0 3px 14px 2px rgba(0, 0, 0, 0.08), 0 8px 10px 1px rgba(0, 0, 0, 0.12);
+  --hu-light-shadow-03: 0 6px 10px -5px rgba(0, 0, 0, 0.04),
+    0 6px 30px 5px rgba(0, 0, 0, 0.08), 0 16px 24px 2px rgba(0, 0, 0, 0.12);
+  --hu-light-shadow-04: 0 9px 15px -7px rgba(0, 0, 0, 0.04),
+    0 9px 46px 8px rgba(0, 0, 0, 0.08), 0 24px 38px 3px rgba(0, 0, 0, 0.12);
 
-  --hu-light-shadow-05: 0 2px 8px 0 rgba(0, 0, 0, 0.08), 0 4px 6px 0 rgba(0, 0, 0, 0.12);
+  --hu-light-shadow-05: 0 2px 8px 0 rgba(0, 0, 0, 0.08),
+    0 4px 6px 0 rgba(0, 0, 0, 0.12);
 
-  --hu-light-shadow-message-input: 0 1px 5px 0 rgba(33, 34, 66, 0.12), 0 0 1px 0 rgba(33, 34, 66, 0.16), 0 2px 1px 0 rgba(33, 34, 66, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --hu-light-shadow-message-input: 0 1px 5px 0 rgba(33, 34, 66, 0.12),
+    0 0 1px 0 rgba(33, 34, 66, 0.16), 0 2px 1px 0 rgba(33, 34, 66, 0.08),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }

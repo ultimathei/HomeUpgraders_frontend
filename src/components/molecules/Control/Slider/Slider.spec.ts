@@ -5,12 +5,10 @@ import scenarios from './Slider.scenarios'
 
 describe('Test Suite for Molecule/Control/Slider', () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const wrapper: VueWrapper<any> = mount(RootComp,
-    {
-      props: scenarios[0] || {},
-      components: { btnComp },
-    }
-  )
+  const wrapper: VueWrapper<any> = mount(RootComp, {
+    props: scenarios[0] || {},
+    components: { btnComp },
+  })
   // tests
   it('should render correct role', async () => {
     const nav = wrapper.find('nav')
@@ -23,7 +21,9 @@ describe('Test Suite for Molecule/Control/Slider', () => {
     expect(nav.attributes('aria-label')).toEqual('Slider Navigation')
 
     await wrapper.setProps(scenarios[1])
-    expect(nav.attributes('aria-label')).toEqual(`${scenarios[1].label} Navigation`)
+    expect(nav.attributes('aria-label')).toEqual(
+      `${scenarios[1].label} Navigation`
+    )
   })
   it('inner component should take disabled status based on prop', async () => {
     const button = wrapper.find('button')

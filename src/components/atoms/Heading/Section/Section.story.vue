@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-  import Comp from './Section.vue'
-  import scenarios from './Section.scenarios'
+import Comp from './Section.vue'
+import scenarios from './Section.scenarios'
 </script>
 
 <template>
@@ -14,7 +14,7 @@
       :title="scenario.text"
       :init-state="() => scenario"
     >
-      <template #controls="{state}">
+      <template #controls="{ state }">
         <div>
           <HstText
             v-model="state.text"

@@ -11,16 +11,16 @@
 </template>
 
 <script setup lang="ts">
-  import { PropType } from 'vue';
-  import { Size } from './Logo.types'
-  import Logo from '@Assets/logo.svg?component'
-  defineProps({
-    withText: Boolean,
-    size: {
-      type: String as PropType<Size>,
-      default: Size.l,
-    },
-  })
+import { PropType } from 'vue'
+import { Size } from './Logo.types'
+import Logo from '@Assets/logo.svg?component'
+defineProps({
+  withText: Boolean,
+  size: {
+    type: String as PropType<Size>,
+    default: Size.l,
+  },
+})
 </script>
 
 <style src="./Logo.module.scss" module lang="scss"></style>

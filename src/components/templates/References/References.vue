@@ -4,12 +4,8 @@ import SectionHeading from '@Atoms/Heading/Section/Section.vue'
 
 <template>
   <section :class="$style.section">
-    <SectionHeading
-      text="References"
-    />
-    <div :class="$style.gallery">
-      Gallery here
-    </div>
+    <SectionHeading text="References" />
+    <div :class="$style.gallery">Gallery here</div>
   </section>
 </template>
 

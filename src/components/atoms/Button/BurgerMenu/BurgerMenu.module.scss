@@ -12,7 +12,7 @@
   width: 2.5em;
   transition: all 0.2s ease-in-out;
 
-  &:is(:hover, :focus-visible):not(:disabled):not(&[data-open="true"]) span {
+  &:is(:hover, :focus-visible):not(:disabled):not(&[data-open='true']) span {
     &:nth-child(1) {
       transform: rotate(-7deg);
     }
@@ -51,7 +51,7 @@
     }
   }
 
-  &[data-open="true"] span {
+  &[data-open='true'] span {
     &:nth-child(1) {
       transform: translate(-0.25em, 1em) rotate(-45deg);
       width: 3rem;

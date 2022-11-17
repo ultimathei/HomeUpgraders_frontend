@@ -1,0 +1,8 @@
+# folders
+build
+coverage
+node_modules
+.vscode
+
+# config files
+**/*.d.ts

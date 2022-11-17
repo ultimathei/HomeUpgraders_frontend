@@ -17,7 +17,7 @@
     height: 2em;
     width: 2em;
   }
-  
+
   &:is(:hover, :focus, :focus-within):not(:disabled):not(&[aria-current]) {
     --bg-color: rgb(var(--hup-color--blue));
     --border-color: var(--bg-color);

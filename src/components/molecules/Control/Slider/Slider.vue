@@ -20,24 +20,24 @@
 </template>
 
 <script setup lang="ts">
-  import ButtonDot from '@Atoms/Button/Dot/Dot.vue'
-  defineProps({
-    label: {
-      type: String,
-      default: 'Slider',
-    },
-    size: {
-      type: Number,
-      required: true,
-    },
-    active: {
-      type: Number,
-      default: 1,
-    },
-    disabled: Boolean,
-  })
-  const emit = defineEmits(['setActive'])
-  const onButtonClick = (n: number) => emit('setActive', n)
+import ButtonDot from '@Atoms/Button/Dot/Dot.vue'
+defineProps({
+  label: {
+    type: String,
+    default: 'Slider',
+  },
+  size: {
+    type: Number,
+    required: true,
+  },
+  active: {
+    type: Number,
+    default: 1,
+  },
+  disabled: Boolean,
+})
+const emit = defineEmits(['setActive'])
+const onButtonClick = (n: number) => emit('setActive', n)
 </script>
 
 <style src="./Slider.module.scss" module lang="scss"></style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import Logo from '@Atoms/Logo/Logo.vue'
-  import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
-  defineEmits(['scrollToAbout'])
+import Logo from '@Atoms/Logo/Logo.vue'
+import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
+defineEmits(['scrollToAbout'])
 </script>
 
 <template>
@@ -31,7 +31,7 @@
       <source
         :src="`src/assets/home_bg.mp4`"
         type="video/mp4"
-      >
+      />
     </video>
   </section>
 </template>
