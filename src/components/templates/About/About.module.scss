@@ -24,6 +24,15 @@
     position: absolute;
     width: 60rem;
   }
+  &::after {
+    content: '';
+    background-color: rgba(var(--hup-color--white), 0.25);
+    border-radius: 9999rem;
+    height: 80rem;
+    inset: -14rem auto;
+    position: absolute;
+    width: 80rem;
+  }
 }
 
 .article {
