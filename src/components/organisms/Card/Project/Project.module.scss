@@ -1,0 +1,98 @@
+.card {
+  align-items: center;
+  background-color: rgba(var(--hup-color--whitesmoke));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  height: 12rem;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+
+  &[aria-expanded="true"]::before {
+    background-color: rgb(var(--hup-color--pink));
+    // have a look at this..
+    // https: //css-tricks.com/expandable-sections-within-a-css-grid/
+  }
+
+  &>* {
+    z-index: 1;
+  }
+
+  &::before {
+    opacity: 0;
+    background-color: rgb(var(--hup-color--green));
+    border-radius: 0.25rem;
+    content: '';
+    height: 100%;
+    inset: 0;
+    mix-blend-mode: multiply;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
+
+  &__title {
+    background-color: rgb(var(--hup-color--black));
+    border-radius: 0.25rem;
+    color: rgb(var(--hup-color--white));
+    font-size: 1.875rem;
+    font-style: italic;
+    max-width: 100%;
+    overflow: hidden;
+    overflow: hidden;
+    padding: 0 0.35em;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &:is(:hover, :focus, :focus-visible, :focus-within) &__title {
+    background-color: rgb(var(--hup-color--white));
+    color: rgb(var(--hup-color--black));
+  }
+
+  &:is(:hover, :focus, :focus-visible, :focus-within) {
+    &::before {
+      opacity: 1;
+    }
+
+    .tags {
+      height: 4rem;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+}
+
+.tags {
+  align-items: flex-start;
+  bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.25rem;
+  height: 2rem;
+  justify-content: flex-end;
+  max-width: 100%;
+  padding: 0.25rem;
+  position: absolute;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+
+  li {
+    background-color: rgb(var(--hup-color--black));
+    border-radius: 0.25em;
+    color: rgb(var(--hup-color--white));
+    padding: 0 0.5em;
+  }
+}
+
+.gallery {
+  background-color: rgb(var(--hup-color--black));
+  grid-column: 1 / -1;
+  height: 20rem;
+}

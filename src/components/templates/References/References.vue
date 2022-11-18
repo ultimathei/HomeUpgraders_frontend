@@ -1,13 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import SectionHeading from '@Atoms/Heading/Section/Section.vue'
+import CardProject from '@Organisms/Card/Project/Project.vue'
+import { IProject } from '@Organisms/Card/Project/Project.types'
 
-interface IProject {
-  id: string
-  title: string
-  tags: string[]
-  coverImage: string
-}
-const dummyProjects: IProject[] = [
+const projects: IProject[] = [
   {
     id: '001',
     title: 'Project 1',
@@ -121,7 +118,6 @@ const dummyProjects: IProject[] = [
       'https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
 ]
-
 const tagsList = [
   'kitchen',
   'flooring',
@@ -133,6 +129,18 @@ const tagsList = [
   'tiling',
   'other',
 ]
+const activeProjectId = ref('')
+const setActive = (id: string) => {
+  if (activeProjectId.value === id) {
+    activeProjectId.value = ''
+    return
+  }
+  activeProjectId.value = id
+}
+// const activeProject = computed(() => projects.find(p => p.id === activeProjectId.value))
+const isActiveProject = (id: string) => {
+  return (activeProjectId.value && activeProjectId.value === id) || false
+}
 </script>
 
 <template>
@@ -156,40 +164,13 @@ const tagsList = [
       <li>BACK</li>
     </ul>
     <ul :class="$style.gallery">
-      <li
-        v-for="project in dummyProjects"
+      <CardProject
+        v-for="project in projects"
         :key="project.id"
-        :class="$style['card']"
-        :tabindex="0"
-        :style="{ backgroundImage: `url(${project.coverImage})` }"
-      >
-        <p
-          :class="$style['card__title']"
-          :title="project.title"
-        >
-          {{ project.title }}
-        </p>
-        <ul
-          v-if="project.tags.length > 0"
-          :class="$style.tags"
-        >
-          <li
-            v-for="tag in project.tags.slice(
-              0,
-              Math.min(project.tags.length, 3)
-            )"
-            :key="`${project.id}-${tag}`"
-          >
-            #{{ tag }}
-          </li>
-          <li
-            v-if="project.tags.length > 3"
-            :key="`${project.id}-tag-more`"
-          >
-            +{{ project.tags.length - 3 }}
-          </li>
-        </ul>
-      </li>
+        :project="project"
+        :active="isActiveProject(project.id)"
+        @set-active="setActive(project.id)"
+      />
     </ul>
   </section>
 </template>
