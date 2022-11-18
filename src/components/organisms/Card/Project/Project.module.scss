@@ -13,10 +13,13 @@
   padding: 1rem;
   position: relative;
 
+  &:nth-last-child(1) {
+    grid-column: auto / span -1;
+  }
+
   &[aria-expanded="true"]::before {
     background-color: rgb(var(--hup-color--pink));
-    // have a look at this..
-    // https: //css-tricks.com/expandable-sections-within-a-css-grid/
+    opacity: 1;
   }
 
   &>* {
@@ -88,11 +91,112 @@
     border-radius: 0.25em;
     color: rgb(var(--hup-color--white));
     padding: 0 0.5em;
+    font-size: 0.875rem;
+    font-style: italic;
+    font-weight: 100;
   }
 }
 
-.gallery {
+.imageScroll {
   background-color: rgb(var(--hup-color--black));
   grid-column: 1 / -1;
-  height: 20rem;
+  // min-height: 20rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+
+  .main {
+    overflow-y: hidden;
+    overflow: -moz-scrollbars-horizontal;
+    overflow-x: scroll;
+    padding-bottom: 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+    width: 100%;
+
+    img {
+      background-color: rgba(var(--hup-color--white), 0.15);
+      border: none;
+      border-radius: 0.25rem;
+      height: 11.3125rem;
+      width: 17rem;
+     }
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      background-color: rgba(var(--hup-color--white), 0.15);
+      border-radius: 0.25rem;
+      height: 1rem;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(var(--hup-color--white));
+      border-radius: 0.25rem;
+    }
+  }
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  &__left {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    
+    &-title{
+      color: rgb(var(--hup-color--white));
+      font-size: 1.875rem;
+      font-style: italic;
+    }
+
+    &-tags {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      gap: 0.25rem;
+      height: 2rem;
+      justify-content: flex-start;
+      max-width: 100%;
+      padding: 0.25rem;
+
+    }
+
+    &-tag {
+      background-color: rgb(var(--hup-color--black));
+      border-radius: 0.25em;
+      color: rgb(var(--hup-color--white));
+      padding: 0 0.5em;
+      font-size: 0.875rem;
+      font-style: italic;
+      font-weight: 100;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-flow: row wrap;
+
+    button {
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
+      background: none;
+      transition: all 0.2s ease-in-out;
+
+      &:is(:hover, :focus, :focus-within, :focus-visible) {
+        background: rgb(var(--hup-color--white));
+      }
+    }
+  }
 }

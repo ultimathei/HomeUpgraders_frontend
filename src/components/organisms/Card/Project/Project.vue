@@ -32,8 +32,38 @@
   </li>
   <li
     v-if="active"
-    :class="$style.gallery"
-  ></li>
+    :class="$style.imageScroll"
+  >
+    <header :class="$style.header">
+      <div :class="$style['header__left']">
+        <p :class="$style['header__left-title']">{{ project.title }}</p>
+        <ul
+          v-if="project.tags.length > 0"
+          :class="$style['header__left-tags']"
+        >
+          <li
+            v-for="tag in project.tags"
+            :key="`${project.id}-${tag}`"
+            :class="$style['header__left-tag']"
+          >
+            #{{ tag }}
+          </li>
+        </ul>
+      </div>
+      <div :class="$style['header__controls']">
+        <button></button>
+        <button @click.prevent="$emit('setActive')" />
+      </div>
+    </header>
+    <main :class="$style.main">
+      <img
+        v-for="n in 15"
+        :key="n"
+        src=""
+        alt=""
+      />
+    </main>
+  </li>
 </template>
 
 <script setup lang="ts">
