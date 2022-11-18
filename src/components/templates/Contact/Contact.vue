@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import SectionHeading from '@Atoms/Heading/Section/Section.vue'
+import videoPath from '@Assets/contact_bg.mp4'
 const props = defineProps({
   visible: Boolean,
 })
@@ -48,7 +49,7 @@ watch(
       playsinline
     >
       <source
-        :src="`src/assets/contact_bg.mp4`"
+        :src="videoPath"
         type="video/mp4"
       />
     </video>

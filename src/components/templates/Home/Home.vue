@@ -3,6 +3,7 @@ import { ref, watch } from 'vue'
 import Logo from '@Atoms/Logo/Logo.vue'
 import ButtonArrow from '@Atoms/Button/Arrow/Arrow.vue'
 import { Size as LogoSize } from '@Atoms/Logo/Logo.types'
+import videoPath from '@Assets/home_bg.mp4'
 const props = defineProps({
   visible: Boolean,
 })
@@ -46,7 +47,7 @@ watch(
       playsinline
     >
       <source
-        :src="`src/assets/home_bg.mp4`"
+        :src="videoPath"
         type="video/mp4"
       />
     </video>
