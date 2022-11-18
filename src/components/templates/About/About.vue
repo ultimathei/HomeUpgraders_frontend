@@ -21,8 +21,8 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
       />
     </div>
     <article
-      :class="$style.article"
       v-if="activeSlider === 1"
+      :class="$style.article"
     >
       <p :class="$style['p--large']">
         We are a family-run, family-done
@@ -41,8 +41,8 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
       </p>
     </article>
     <article
-      :class="$style.article"
       v-if="activeSlider === 2"
+      :class="$style.article"
     >
       <p :class="$style['p--narrow']">
         Jozsef's 30+ years of experience and practice there is a small range of
@@ -59,8 +59,8 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
       </p>
     </article>
     <article
-      :class="$style.article"
       v-if="activeSlider === 3"
+      :class="$style.article"
     >
       <p :class="$style['p--large']">
         "Excellent service, cannot fault them on anything. They arrived early,
@@ -71,8 +71,8 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
       <p :class="$style['p--accent']">Dean, another happy customer</p>
     </article>
     <article
-      :class="[$style.article, $style['article--grid']]"
       v-if="activeSlider === 4"
+      :class="[$style.article, $style['article--grid']]"
     >
       <div>
         <p :class="$style['p--large']">Home</p>
