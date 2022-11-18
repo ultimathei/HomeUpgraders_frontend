@@ -1,7 +1,35 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import SectionHeading from '@Atoms/Heading/Section/Section.vue'
 import SliderControl from '@Molecules/Control/Slider/Slider.vue'
+import ImgPath_1 from '@Assets/about_figure_1_2.png'
+import ImgPath_2 from '@Assets/about_figure_1_1.png'
+import ImgPath_3 from '@Assets/about_figure_2_3.png'
+import ImgPath_4 from '@Assets/about_figure_2_2.png'
+import ImgPath_5 from '@Assets/about_figure_2_1.png'
+import ImgPath_6 from '@Assets/logo.svg?url'
+
+const imageOneBackground = computed(() => {
+  switch (activeSlider.value) {
+    case 1:
+      return ImgPath_1
+    case 2:
+      return ImgPath_2
+    case 3:
+      return ImgPath_3
+    default:
+      return ImgPath_6
+  }
+})
+const imageTwoBackground = computed(() => {
+  switch (activeSlider.value) {
+    case 1:
+      return ImgPath_4
+    default:
+      return ImgPath_5
+  }
+})
+
 const activeSlider = ref(1)
 const clickButton = (n: number) => (activeSlider.value = n)
 const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
@@ -14,10 +42,12 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
       <div
         :class="[$style.card, $style['card--1']]"
         :data-variation="activeSlider"
+        :style="{ backgroundImage: `url(${imageOneBackground})` }"
       />
       <div
         :class="[$style.card, $style['card--2']]"
         :data-variation="activeSlider"
+        :style="{ backgroundImage: `url(${imageTwoBackground})` }"
       />
     </div>
     <article
