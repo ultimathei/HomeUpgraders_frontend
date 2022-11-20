@@ -186,16 +186,32 @@
     flex-flow: row wrap;
 
     button {
-      border: none;
+      background: none;
       border-radius: 0.25rem;
+      border: none;
       cursor: pointer;
       height: 2.5rem;
-      width: 2.5rem;
-      background: none;
+      position: relative;
       transition: all 0.2s ease-in-out;
+      width: 2.5rem;
+
+      & > svg {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        fill: rgb(var(--hup-color--white));
+        transition: all 0.2s ease-in-out;
+      }
 
       &:is(:hover, :focus, :focus-within, :focus-visible) {
         background: rgb(var(--hup-color--white));
+
+        & > svg {
+          fill: rgb(var(--hup-color--black));
+          transform: rotate(90deg);
+        }
       }
     }
   }

@@ -51,8 +51,10 @@
         </ul>
       </div>
       <div :class="$style['header__controls']">
-        <button></button>
-        <button @click.prevent="$emit('setActive')" />
+        <!-- <button></button> -->
+        <button @click.prevent="$emit('setActive')">
+          <CloseIcon />
+        </button>
       </div>
     </header>
     <main :class="$style.main">
@@ -69,6 +71,7 @@
 <script setup lang="ts">
 import { computed, PropType } from 'vue'
 import { IProject } from './Project.types'
+import CloseIcon from '@Assets/button_close.svg'
 const props = defineProps({
   project: {
     type: Object as PropType<IProject>,
