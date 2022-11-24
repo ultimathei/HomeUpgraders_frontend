@@ -118,14 +118,6 @@
     gap: 0.5rem;
     width: 100%;
 
-    img {
-      background-color: rgba(var(--hup-color--white), 0.15);
-      border: none;
-      border-radius: 0.25rem;
-      height: 11.3125rem;
-      width: 17rem;
-     }
-
     &::-webkit-scrollbar {
       -webkit-appearance: none;
       background-color: rgba(var(--hup-color--white), 0.15);
@@ -181,6 +173,7 @@
   }
 
   &__controls {
+    align-self: flex-start;
     display: flex;
     gap: 0.5rem;
     flex-flow: row wrap;
@@ -214,5 +207,44 @@
         }
       }
     }
+  }
+}
+
+.thumbnail {
+  border-radius: 0.5rem;
+  flex: 0 0 17rem;
+  height: 11.3125rem;
+  overflow: hidden;
+  position: relative;
+  width: 17rem;
+
+  img {
+    background-color: rgba(var(--hup-color--white), 0.15);
+    border: none;
+    outline: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__overlay {
+    align-items: center;
+    background-color: rgba(var(--hup-color--black), 0.75);
+    display: flex;
+    inset: 0 0 0 0;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    svg {
+      fill: rgb(var(--hup-color--white));
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+
+  &:is(:hover, :focus, :focus-within, :focus-visible) &__overlay {
+    opacity: 1;
   }
 }

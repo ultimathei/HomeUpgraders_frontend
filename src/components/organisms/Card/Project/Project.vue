@@ -5,6 +5,7 @@
     :style="backgroundStyle"
     :aria-expanded="active"
     @click="$emit('setActive')"
+    @keyup.enter="$emit('setActive')"
   >
     <p
       :class="$style['card__title']"
@@ -58,12 +59,21 @@
       </div>
     </header>
     <main :class="$style.main">
-      <img
-        v-for="n in 15"
+      <a
+        v-for="n in 25"
         :key="n"
-        src=""
-        alt=""
-      />
+        :class="$style.thumbnail"
+        href="#"
+        @click.prevent="openImageViewer"
+      >
+        <img
+          src=""
+          alt=""
+        />
+        <span :class="$style.thumbnail__overlay">
+          <ViewIcon />
+        </span>
+      </a>
     </main>
   </li>
 </template>
@@ -72,6 +82,7 @@
 import { computed, PropType } from 'vue'
 import { IProject } from './Project.types'
 import CloseIcon from '@Assets/button_close.svg'
+import ViewIcon from '@Assets/icon--eye.svg'
 const props = defineProps({
   project: {
     type: Object as PropType<IProject>,
@@ -84,6 +95,9 @@ defineEmits(['setActive'])
 const backgroundStyle = computed(() => ({
   backgroundImage: `url(${props.project.coverImage})`,
 }))
+const openImageViewer = () => {
+  console.log('TODO open imageViewer')
+}
 </script>
 
 <style src="./Project.module.scss" module lang="scss" />
