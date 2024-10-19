@@ -10,6 +10,7 @@
     id="site-menu"
     :open="menuOpen"
     :active="activeMenuItem"
+    :use-references="useReferences"
     @click="menuItemClick"
   />
   <main id="site-main">
@@ -23,7 +24,7 @@
       id="section-contact"
       :visible="activeMenuItem === 'contact'"
     />
-    <References id="section-references" />
+    <References v-if="useReferences" id="section-references" />
   </main>
   <SiteFooter id="site-footer" />
 </template>
@@ -37,6 +38,8 @@ import References from '@Templates/References/References.vue'
 import SiteHeader from '@Templates/Header/Header.vue'
 import SiteFooter from '@Templates/Footer/Footer.vue'
 import SiteMenu from '@Templates/Menu/Menu.vue'
+
+const useReferences = false
 
 // Menu
 const menuOpen = ref(false)

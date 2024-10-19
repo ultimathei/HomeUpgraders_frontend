@@ -31,7 +31,7 @@
           @click="$emit('click', 'contact')"
         />
       </li>
-      <li>
+      <li v-if="useReferences">
         <MenuItem
           label="References"
           to-id="#section-references"
@@ -52,6 +52,7 @@ defineProps({
     type: String,
     default: 'home',
   },
+  useReferences: Boolean,
 })
 defineEmits(['click'])
 </script>
