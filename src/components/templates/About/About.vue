@@ -37,8 +37,10 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
         <span :class="$style['p--accent']">Stoke-on-Trent</span>,
         <span :class="$style['p--accent']">Staffordshire</span>, we have
         costumers from within the 50 miles radius of
-        <span :class="$style['p--accent']">Birmingham</span> and
-        <span :class="$style['p--accent']">Manchester</span>.
+        <span :class="$style['p--accent']">Birmingham</span>,
+        <span :class="$style['p--accent']">Manchester</span>,
+        <span :class="$style['p--accent']">Oxford</span> and 
+        <span :class="$style['p--accent']">London</span>.
       </p>
     </article>
     <article
