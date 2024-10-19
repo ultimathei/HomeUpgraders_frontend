@@ -17,6 +17,7 @@ const emit = defineEmits(['click'])
     <Logo
       :class="{ [$style.hidden]: !withLogo }"
       :with-text="true"
+      :with-email="true"
       :size="LogoSize.m"
     />
     <ButtonBurgerMenu

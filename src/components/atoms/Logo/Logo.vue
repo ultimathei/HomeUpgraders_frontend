@@ -6,8 +6,10 @@
     aria-label="Logo"
   >
     <Logo :class="$style['logo__graphics']" />
-    <em v-if="withText">HOME UPGRADERS</em>
-    <a v-if="withEmail" href="mailto:info@homeupgraders.co.uk">info@homeupgraders.co.uk</a>
+    <div :class="$style['logo__text']">
+      <em v-if="withText">HOME UPGRADERS</em>
+      <a v-if="withEmail" href="mailto:info@homeupgraders.co.uk">info@homeupgraders.co.uk</a>
+    </div>
   </div>
 </template>
 

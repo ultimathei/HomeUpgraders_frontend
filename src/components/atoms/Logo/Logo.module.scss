@@ -18,6 +18,11 @@
     width: var(--logo-size);
   }
 
+  &__text {
+    display: flex;
+    flex-flow: column;
+  }
+
   em {
     font-family: 'Futura', sans-serif;
     font-size: var(--text-size);
@@ -45,7 +50,6 @@
 
     em {
       text-align: left;
-      width: 6em;
     }
   }
 }
