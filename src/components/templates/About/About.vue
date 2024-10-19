@@ -3,6 +3,10 @@ import { ref } from 'vue'
 import SectionHeading from '@Atoms/Heading/Section/Section.vue'
 import SliderControl from '@Molecules/Control/Slider/Slider.vue'
 
+defineProps({
+  useReferences: Boolean,
+})
+
 const activeSlider = ref(1)
 const clickButton = (n: number) => (activeSlider.value = n)
 const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
@@ -55,7 +59,7 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
         If you were interested in working with us, please feel free to email us
         any time.
       </p>
-      <p :class="$style['p--narrowest']">
+      <p v-if="useReferences" :class="$style['p--narrowest']">
         Please have a look at our
         <span :class="$style['p--accent']">photo and video gallery</span> to see
         what we are capable of.

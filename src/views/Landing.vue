@@ -19,7 +19,10 @@
       :visible="!headerHasBackground"
       @scroll-to-about="scrollToSection('section-about')"
     />
-    <About id="section-about" />
+    <About
+      id="section-about"
+      :use-references="useReferences"
+    />
     <Contact
       id="section-contact"
       :visible="activeMenuItem === 'contact'"
