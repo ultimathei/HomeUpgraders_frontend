@@ -7,6 +7,7 @@
   >
     <Logo :class="$style['logo__graphics']" />
     <em v-if="withText">HOME UPGRADERS</em>
+    <a v-if="withEmail" href="mailto:info@homeupgraders.co.uk">info@homeupgraders.co.uk</a>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import { Size } from './Logo.types'
 import Logo from '@Assets/logo.svg?component'
 defineProps({
   withText: Boolean,
+  withEmail: Boolean,
   size: {
     type: String as PropType<Size>,
     default: Size.l,

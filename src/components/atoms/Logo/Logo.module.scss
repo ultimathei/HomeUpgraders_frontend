@@ -2,6 +2,7 @@
   --color: rgb(var(--hup-color--white));
   --logo-size: 5em;
   --text-size: 2em;
+  --sub-text-size: 1em;
   --flex-flow: column;
   align-items: center;
   color: var(--color);
@@ -25,6 +26,15 @@
     text-align: center;
     text-transform: uppercase;
     font-style: normal;
+  }
+
+  a {
+    font-family: 'Futura', sans-serif;
+    font-size: var(--sub-text-size);
+    line-height: 1.2em;
+    font-weight: 300;
+    text-align: center;
+    color: var(--color);
   }
 
   &[data-size='m'] {

@@ -39,6 +39,7 @@ import scenarios from './Logo.scenarios'
           <Comp
             :size="state.size"
             :with-text="state.withText"
+            :with-email="state.withEmail || false"
           />
         </div>
       </template>

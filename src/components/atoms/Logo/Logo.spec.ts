@@ -27,4 +27,13 @@ describe('Test Suite for Atom/Logo', () => {
     text = wrapper.find('em')
     expect(text.exists()).toBe(false)
   })
+  it('should render email address based on with-email prop', async () => {
+    await wrapper.setProps(scenarios[0])
+    let emailLink = wrapper.find('a')
+    expect(emailLink.exists()).toBe(false)
+
+    await wrapper.setProps(scenarios[4])
+    emailLink = wrapper.find('a')
+    expect(emailLink.exists()).toBe(true)
+  })
 })

@@ -20,4 +20,10 @@ export default [
     withText: false,
     size: 'm',
   },
+  {
+    label: 'Default',
+    withText: true,
+    withEmail: true,
+    size: 'l',
+  },
 ]

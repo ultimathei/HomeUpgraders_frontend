@@ -28,6 +28,7 @@ watch(
     <Logo
       :class="$style['section__top']"
       :with-text="true"
+      :with-email="true"
       :size="LogoSize.l"
     />
     <div :class="$style['section__bottom']">
