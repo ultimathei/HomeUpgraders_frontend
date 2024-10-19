@@ -31,7 +31,7 @@ watch(
         write us a couple of lines about your job and we will get back to you in
         no time.
       </p>
-      <p :class="$style['text-small']"><span>Photos</span>are always welcome 📸 😊</p>
+      <p :class="$style['p--small']"><span>Photos</span>are always welcome 📸 😊</p>
     </article>
     <address>
       <span>Email us at</span>

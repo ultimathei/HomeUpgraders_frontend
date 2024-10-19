@@ -51,6 +51,10 @@
 
   .p--large {
     font-size: 1.875rem;
+
+    @media screen and (max-width: 480px) {
+      font-size: 1.4rem;
+    }
   }
   .p--narrow {
     max-width: 26em;
