@@ -42,7 +42,7 @@ import SiteHeader from '@Templates/Header/Header.vue'
 import SiteFooter from '@Templates/Footer/Footer.vue'
 import SiteMenu from '@Templates/Menu/Menu.vue'
 
-const useReferences = false
+const useReferences = true
 
 // Menu
 const menuOpen = ref(false)

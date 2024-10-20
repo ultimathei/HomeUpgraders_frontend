@@ -1,6 +1,3 @@
-export interface IProject {
-  id: string
-  title: string
-  tags: string[]
-  coverImage: string
-}
+import { IProject } from "@/interfaces/projects.interface"
+
+export type { IProject }

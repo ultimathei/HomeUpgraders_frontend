@@ -3,11 +3,20 @@
   display: flex;
   flex-flow: column nowrap;
 
-  &>span {
-    background-color: rgb(var(--hup-color--white));
-    border-radius: 1em;
+  &__line {
     flex-grow: 1;
-    width: 0.125rem;
+    width: 1rem;
+    position: relative;
+    &-inner {
+      border-left: 1px solid rgb(var(--hup-color--white));
+      border-radius: 1em;
+      width: 1px;
+      height: 0%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      animation: arrow-line 1s ease-in-out 1s forwards;
+    }
   }
 
   &>button {
@@ -50,5 +59,10 @@
       transform: rotate(45deg);
       width: 0.75rem;
     }
+  }
+
+  @keyframes arrow-line {
+    from { height: 0%; }
+    to { height: 100%; }
   }
 }

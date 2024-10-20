@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.arrow">
-    <span />
+    <span :class="$style['arrow__line']">
+      <span :class="$style['arrow__line-inner']"/>
+    </span>
     <button @click.prevent="$emit('click')" />
   </div>
 </template>

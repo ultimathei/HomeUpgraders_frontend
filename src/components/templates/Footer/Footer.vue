@@ -2,7 +2,7 @@
 
 <template>
   <footer :class="$style.footer">
-    <p>Designed and Developed by Mate Krisztian @ 2017</p>
+    <p>Designed and Developed by our son, Mate Krisztian @ 2017</p>
     <p>krisztian.mate.design@gmail.com</p>
   </footer>
 </template>

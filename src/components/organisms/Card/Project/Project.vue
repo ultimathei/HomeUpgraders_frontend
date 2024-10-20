@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { IProject } from './Project.types'
+import CloseIcon from '@Assets/button_close.svg'
+import ViewIcon from '@Assets/icon--eye.svg'
+import { getImageUrl } from '@/helpers/media.helper'
+
+const props = defineProps<{
+  project: IProject
+  active?: boolean
+  disabled?: boolean
+}>()
+defineEmits(['setActive', 'open-image'])
+const backgroundStyle = computed(() => {
+  const url = getImageUrl(props.project.coverImage, 'small')
+  return { backgroundImage: `url(${url})` }
+})
+</script>
+
 <template>
   <li
     :class="$style['card']"
@@ -19,18 +38,19 @@
     >
       <li
         v-for="tag in project.tags.slice(0, Math.min(project.tags.length, 3))"
-        :key="`${project.id}-${tag}`"
+        :key="`${project.documentId}-${tag.documentId}`"
       >
-        #{{ tag }}
+        #{{ tag.title }}
       </li>
       <li
         v-if="project.tags.length > 3"
-        :key="`${project.id}-tag-more`"
+        :key="`${project.documentId}-tag-more`"
       >
         +{{ project.tags.length - 3 }}
       </li>
     </ul>
   </li>
+
   <li
     v-if="active"
     :class="$style.imageScroll"
@@ -44,15 +64,14 @@
         >
           <li
             v-for="tag in project.tags"
-            :key="`${project.id}-${tag}`"
+            :key="`${project.documentId}-${tag.documentId}`"
             :class="$style['header__left-tag']"
           >
-            #{{ tag }}
+            #{{ tag.title }}
           </li>
         </ul>
       </div>
       <div :class="$style['header__controls']">
-        <!-- <button></button> -->
         <button @click.prevent="$emit('setActive')">
           <CloseIcon />
         </button>
@@ -60,15 +79,15 @@
     </header>
     <main :class="$style.main">
       <a
-        v-for="n in 25"
-        :key="n"
+        v-for="(media, i) in project.media"
+        :key="media.documentId"
         :class="$style.thumbnail"
         href="#"
-        @click.prevent="openImageViewer"
+        @click.prevent="$emit('open-image', i)"
       >
         <img
-          src=""
-          alt=""
+          :src="getImageUrl(media, 'small')"
+          :alt="media.alternativeText || 'project reference image'"
         />
         <span :class="$style.thumbnail__overlay">
           <ViewIcon />
@@ -77,27 +96,5 @@
     </main>
   </li>
 </template>
-
-<script setup lang="ts">
-import { computed, PropType } from 'vue'
-import { IProject } from './Project.types'
-import CloseIcon from '@Assets/button_close.svg'
-import ViewIcon from '@Assets/icon--eye.svg'
-const props = defineProps({
-  project: {
-    type: Object as PropType<IProject>,
-    required: true,
-  },
-  active: Boolean,
-  disabled: Boolean,
-})
-defineEmits(['setActive'])
-const backgroundStyle = computed(() => ({
-  backgroundImage: `url(${props.project.coverImage})`,
-}))
-const openImageViewer = () => {
-  console.log('TODO open imageViewer')
-}
-</script>
 
 <style src="./Project.module.scss" module lang="scss" />

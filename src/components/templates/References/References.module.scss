@@ -8,6 +8,10 @@
   justify-content: space-between;
   padding: 3.875rem 5rem;
 
+  @media screen and (max-width: 600px) {
+    padding: 3.875rem 0.5rem;
+  }
+
   article {
     align-items: center;
     display: flex;
@@ -40,6 +44,8 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding: 0;
   width: 100%;
+  background-color: rgb(var(--hup-color--whitesmoke));
+  padding: 0.25rem;
 }
 
 .filters {
@@ -53,13 +59,56 @@
   transition: all 0.2s ease-in-out;
 
   li {
-    background-color: rgb(var(--hup-color--black));
+    border: 1px solid rgb(var(--hup-color--black));
     border-radius: 0.25em;
-    color: rgb(var(--hup-color--white));
+    color: rgb(var(--hup-color--black));
     cursor: pointer;
     padding: 0 0.5em;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-style: italic;
     font-weight: 100;
+
+    &:is(&:hover, &:focus, &:focus-within) {
+      border-color: rgb(var(--hup-color--green));
+      color: rgb(var(--hup-color--green));
+    }
+
+    &[data-selected="true"] {
+      background-color: rgb(var(--hup-color--black));
+      color: rgb(var(--hup-color--white));
+
+      &:is(&:hover, &:focus, &:focus-within) {
+        background-color: rgb(var(--hup-color--green));
+        color: rgb(var(--hup-color--white));
+      }
+    }
   }
+}
+
+.empty-list {
+  padding: 1rem;
+  text-align: center;
+
+  &__clear {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.image-viewer {
+  background-color: rgb(var(--hup-color--black));
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  border: none;
+  // TODO
+}
+
+.image-viewer::backdrop {
+  overscroll-behavior: contain;
+  background-color: rgb(var(--hup-color--black));
+  opacity: 0.75;
+  z-index: 10;
 }
