@@ -24,7 +24,7 @@ watch(
 </script>
 
 <template>
-  <section class="section">
+  <section v-bind="$attrs" class="section">
     <Logo
       class="section__top"
       :with-text="true"

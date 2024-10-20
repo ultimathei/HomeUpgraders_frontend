@@ -12,7 +12,9 @@ const emit = defineEmits(['click'])
 
 <template>
   <header
-    class="header" :class="{ 'header--open': withBackground }"
+    class="header"
+    :class="{ 'header--open': withBackground }"
+    v-bind="$attrs"
   >
     <Logo
       :class="{ 'hidden': !withLogo }"

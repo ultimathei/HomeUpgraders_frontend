@@ -13,7 +13,7 @@ const headingLabels = ['About', 'Who we are', 'What they say', 'Why the name']
 </script>
 
 <template>
-  <section class="section">
+  <section v-bind="$attrs" class="section">
     <SectionHeading :text="headingLabels[activeSlider - 1 || 0]" />
     <div class="cards">
       <div

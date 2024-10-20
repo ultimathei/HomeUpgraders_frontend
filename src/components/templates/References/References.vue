@@ -2,10 +2,11 @@
 import { computed, onMounted, ref } from 'vue'
 import SectionHeading from '@Atoms/Heading/Section/Section.vue'
 import CardProject from '@Organisms/Card/Project/Project.vue'
-import { IProject } from '@Organisms/Card/Project/Project.types'
+import { IProject } from "@/interfaces/projects.interface"
 import { getProjects, getTags } from '@/services/projects.service'
 import { ITag } from '@/interfaces/tags.interface'
-import { IUpload } from '@/interfaces/upload.interface'
+import ImageViewerDialog from '@/components/organisms/ImageViewer/ImageViewerDialog.vue'
+import Logo from '@Assets/logo.svg?component'
 
 const tagsList = ref<ITag[]>([])
 const tagsListLoading = ref(true)
@@ -26,7 +27,6 @@ const setActive = (id: string) => {
   }
   activeProjectId.value = id
 }
-// const activeProject = computed(() => projects.find(p => p.id === activeProjectId.value))
 const isActiveProject = (id: string) => (activeProjectId.value && activeProjectId.value === id) || false;
 
 const selectedTags = ref<Set<string>>(new Set<string>())
@@ -53,15 +53,24 @@ const fetchProjects = async () => {
   projectsLoading.value = false
 }
 
-const imageViewer = ref<HTMLDialogElement|null>(null)
-const openImageViewer = (index: number, media: IUpload[]) => {
-  console.log('TODO open imageViewer', index, media)
-  imageViewer.value?.showModal()
-  // document.body.classList.add('dialog-open')
+const imageViewerProject = ref<IProject|null>(null)
+const imageViewerImageIndex = ref<number|null>(null)
+const scrollOffsetYWas = ref<number|null>(null)
+const openImageViewer = (project: IProject, imageIndex: number) => {
+  scrollOffsetYWas.value = window.scrollY
+  // TODO - bundle as IImageViewerData { project, index } // ?
+  imageViewerProject.value = project
+  imageViewerImageIndex.value = imageIndex
 }
 const closeImageViewer = () => {
-  imageViewer.value?.close()
-  // document.body.classList.remove('dialog-open')
+  imageViewerProject.value = null
+  imageViewerImageIndex.value = null
+  document.documentElement.style.scrollBehavior = 'auto'
+  window.scrollTo({
+    top: scrollOffsetYWas.value || 0,
+    left: 0,
+  })
+  document.documentElement.style.scrollBehavior = 'smooth'
 }
 
 onMounted(() => {
@@ -110,8 +119,19 @@ onMounted(() => {
         :project="project"
         :active="isActiveProject(project.id)"
         @set-active="setActive(project.id)"
-        @open-image="openImageViewer($event, project.media)"
+        @open-image="openImageViewer(project, $event)"
       />
+      <li v-if="!!projects?.length">
+        <a
+          key="ref-contact"
+          class="thumbnail | thumbnail--contact"
+          href="mailto:info@homeupgraders.co.uk"
+        >
+          <Logo class="thumbnail__logo" />
+          <p>Like what you see?</p>
+          <p>Get a quote for your project!</p>
+        </a>
+      </li>
       <li v-if="!projects?.length && projectsLoading" class="empty-list">
         Loading project folders..
       </li>
@@ -123,11 +143,12 @@ onMounted(() => {
       </li>
     </ul>
   </section>
-
-  <!--  -->
-    <dialog ref="imageViewer" class="image-viewer">
-      blabla
-    </dialog>
+  <ImageViewerDialog
+    :project="imageViewerProject"
+    :image-index="imageViewerImageIndex"
+    @close="closeImageViewer"
+    @select-image="imageViewerImageIndex = $event"
+  />
 </template>
 
 <style scoped lang="scss">
@@ -228,21 +249,25 @@ onMounted(() => {
   }
 }
 
-.image-viewer {
-  background-color: rgb(var(--hup-color--black));
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  height: 100vh;
-  width: 100vw;
-  border: none;
-  // TODO
+.thumbnail--contact {
+  background-color: rgba(var(--hup-color--black), 0.1);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(var(--hup-color--black));
+  padding: 1rem;
+  height: 100%;
+
+  &:is(&:hover, &:focus) {
+    background-color: rgba(var(--hup-color--black), 0.2);
+  }
 }
 
-.image-viewer::backdrop {
-  overscroll-behavior: contain;
-  background-color: rgb(var(--hup-color--black));
-  opacity: 0.75;
-  z-index: 10;
+.thumbnail__logo {
+  fill: rgb(var(--hup-color--black));
+  width: 3rem;
+  margin-bottom: 0.5rem;
 }
 </style>

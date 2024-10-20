@@ -43,6 +43,7 @@ import SiteFooter from '@Templates/Footer/Footer.vue'
 import SiteMenu from '@Templates/Menu/Menu.vue'
 
 const useReferences = true
+const headerHeight = 48
 
 // Menu
 const menuOpen = ref(false)
@@ -55,7 +56,7 @@ const menuItemClick = (key: string) => {
 // Home
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id)
-  if (el) window.scrollTo(0, el?.offsetTop - 48)
+  if (el) window.scrollTo(0, el?.offsetTop - headerHeight)
 }
 
 // Intersection observer
@@ -77,6 +78,7 @@ const observer = new IntersectionObserver(handleIntersection, {
 const sectionObserver = new IntersectionObserver(handleSectionIntersection, {
   threshold: 0.5,
 })
+
 onMounted(() => {
   observer.observe(document.getElementById('section-home') as Element)
   const sections = document.querySelectorAll('section')

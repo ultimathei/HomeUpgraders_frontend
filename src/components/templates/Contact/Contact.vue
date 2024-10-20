@@ -20,7 +20,7 @@ watch(
 </script>
 
 <template>
-  <section class="section">
+  <section v-bind="$attrs" class="section">
     <SectionHeading
       text="Contact"
       :light="true"

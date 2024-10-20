@@ -29,4 +29,7 @@ export default defineConfig({
       ignored: ['**/coverage/**'],
     },
   },
+  define: {
+    '__VUE_PROD_HYDRATION_MISMATCH_DETAILS__': true, // Set to `true` if you need more debugging info
+  },
 })

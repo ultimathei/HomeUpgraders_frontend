@@ -47,9 +47,12 @@
   display: flex;
   flex-flow: column nowrap;
   height: 100vh;
-  overflow-x: hidden;
   position: absolute;
   width: 100vw;
+}
+
+body:has(dialog[open]) #app {
+  overflow-y: hidden;
 }
 
 *::-moz-selection {
@@ -65,8 +68,4 @@
 
 *:focus-visible {
   outline: rgb(var(--hup-color--green)) auto 0.125rem;
-}
-
-body.dialog-open {
-  overflow-y: hidden;
 }

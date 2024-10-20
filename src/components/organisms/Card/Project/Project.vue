@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { IProject } from './Project.types'
-import CloseIcon from '@Assets/button_close.svg'
-import ViewIcon from '@Assets/icon--eye.svg'
+import { IProject } from "@/interfaces/projects.interface"
 import { getImageUrl } from '@/helpers/media.helper'
+import ImageCarousel from '../../ImageViewer/ImageCarousel.vue'
 
 const props = defineProps<{
   project: IProject
@@ -50,50 +49,17 @@ const backgroundStyle = computed(() => {
       </li>
     </ul>
   </li>
-
   <li
     v-if="active"
-    class="imageScroll"
+    class="card--active"
   >
-    <header class="header">
-      <div class="header__left">
-        <p class="header__left-title">{{ project.title }}</p>
-        <ul
-          v-if="project.tags.length > 0"
-          class="header__left-tags"
-        >
-          <li
-            v-for="tag in project.tags"
-            :key="`${project.documentId}-${tag.documentId}`"
-            class="header__left-tag"
-          >
-            #{{ tag.title }}
-          </li>
-        </ul>
-      </div>
-      <div class="header__controls">
-        <button @click.prevent="$emit('setActive')">
-          <CloseIcon />
-        </button>
-      </div>
-    </header>
-    <main class="main">
-      <a
-        v-for="(media, i) in project.media"
-        :key="media.documentId"
-        class="thumbnail"
-        href="#"
-        @click.prevent="$emit('open-image', i)"
-      >
-        <img
-          :src="getImageUrl(media, 'small')"
-          :alt="media.alternativeText || 'project reference image'"
-        />
-        <span class="thumbnail__overlay">
-          <ViewIcon />
-        </span>
-      </a>
-    </main>
+    <ImageCarousel
+      v-if="!!project && active"
+      :project="project"
+      use-active-image-display
+      @open="$emit('open-image', $event)"
+      @close="$emit('setActive')"
+    />
   </li>
 </template>
 
@@ -197,155 +163,8 @@ const backgroundStyle = computed(() => {
   }
 }
 
-.imageScroll {
-  background-color: rgb(var(--hup-color--black));
+.card--active {
   grid-column: 1 / -1;
-  // min-height: 20rem;
   border-radius: 0.25rem;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  width: 100%;
-
-  .main {
-    overflow-y: hidden;
-    overflow: -moz-scrollbars-horizontal;
-    overflow-x: scroll;
-    padding-bottom: 0.5rem;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 0.5rem;
-    width: 100%;
-
-    &::-webkit-scrollbar {
-      -webkit-appearance: none;
-      background-color: rgba(var(--hup-color--white), 0.15);
-      border-radius: 0.25rem;
-      height: 1rem;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-      background-color: rgb(var(--hup-color--white));
-      border-radius: 0.25rem;
-    }
-  }
-}
-
-.header {
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-
-  &__left {
-    align-items: flex-end;
-    display: flex;
-    flex-flow: row wrap;
-    
-    &-title{
-      color: rgb(var(--hup-color--white));
-      font-size: 1.875rem;
-      font-style: italic;
-    }
-
-    &-tags {
-      align-items: center;
-      display: flex;
-      flex-flow: row wrap;
-      gap: 0.25rem;
-      height: 2rem;
-      justify-content: flex-start;
-      max-width: 100%;
-      padding: 0.25rem;
-
-    }
-
-    &-tag {
-      background-color: rgb(var(--hup-color--black));
-      border-radius: 0.25em;
-      color: rgb(var(--hup-color--white));
-      padding: 0 0.5em;
-      font-size: 0.875rem;
-      font-style: italic;
-      font-weight: 100;
-    }
-  }
-
-  &__controls {
-    align-self: flex-start;
-    display: flex;
-    gap: 0.5rem;
-    flex-flow: row wrap;
-
-    button {
-      background: none;
-      border-radius: 0.25rem;
-      border: none;
-      cursor: pointer;
-      height: 2.5rem;
-      position: relative;
-      transition: all 0.2s ease-in-out;
-      width: 2.5rem;
-
-      & > svg {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        fill: rgb(var(--hup-color--white));
-        transition: all 0.2s ease-in-out;
-      }
-
-      &:is(:hover, :focus, :focus-within, :focus-visible) {
-        background: rgb(var(--hup-color--white));
-
-        & > svg {
-          fill: rgb(var(--hup-color--black));
-          transform: rotate(90deg);
-        }
-      }
-    }
-  }
-}
-
-.thumbnail {
-  border-radius: 0.5rem;
-  flex: 0 0 17rem;
-  height: 11.3125rem;
-  overflow: hidden;
-  position: relative;
-  width: 17rem;
-
-  img {
-    background-color: rgba(var(--hup-color--white), 0.15);
-    border: none;
-    outline: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-
-  &__overlay {
-    align-items: center;
-    background-color: rgba(var(--hup-color--black), 0.75);
-    display: flex;
-    inset: 0 0 0 0;
-    justify-content: center;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-
-    svg {
-      fill: rgb(var(--hup-color--white));
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-  }
-
-  &:is(:hover, :focus, :focus-within, :focus-visible) &__overlay {
-    opacity: 1;
-  }
 }
 </style>
