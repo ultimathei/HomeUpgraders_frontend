@@ -3,7 +3,7 @@
     role="navigation"
     :aria-label="`${label} Navigation`"
   >
-    <ul :class="$style.slider">
+    <ul class="slider">
       <li
         v-for="n in size"
         :key="n"
@@ -40,4 +40,11 @@ const emit = defineEmits(['setActive'])
 const onButtonClick = (n: number) => emit('setActive', n)
 </script>
 
-<style src="./Slider.module.scss" module lang="scss"></style>
+<style scoped lang="scss">
+.slider {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+</style>

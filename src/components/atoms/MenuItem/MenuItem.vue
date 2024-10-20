@@ -1,6 +1,6 @@
 <template>
   <a
-    :class="$style.menuItem"
+    class="menuItem"
     :href="toId"
     :aria-selected="active"
     :tabindex="visible ? 0 : -1"
@@ -27,4 +27,24 @@ defineProps({
 defineEmits(['click'])
 </script>
 
-<style src="./MenuItem.module.scss" module lang="scss"></style>
+<style scoped lang="scss">
+.menuItem {
+  border: 0.25rem solid;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  color: rgb(var(--hup-color--white));
+  font-size: 3rem;
+  padding: 0 1em;
+  text-align: center;
+  text-decoration: none;
+
+  &[aria-selected='true'] {
+    background-color: rgb(var(--hup-color--white));
+    color: rgb(var(--hup-color--black));
+  }
+
+  &:is(:hover, :focus, :focus-within):not(&[aria-selected='true']) {
+    border-color: rgb(var(--hup-color--white));
+  }
+}
+</style>

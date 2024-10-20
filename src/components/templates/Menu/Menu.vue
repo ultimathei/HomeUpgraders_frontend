@@ -1,6 +1,6 @@
 <template>
   <aside
-    :class="$style.menu"
+    class="menu"
     :aria-expanded="open"
   >
     <ul>
@@ -57,4 +57,42 @@ defineProps({
 defineEmits(['click'])
 </script>
 
-<style src="./Menu.module.scss" module lang="scss" />
+<style scoped lang="scss">
+.menu {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: -100vh;
+  transition: top 0.3s ease-in-out;
+  width: 100vw;
+  z-index: 9;
+
+  /* slightly transparent fallback */
+  background-color: rgba(var(--hup-color--black), 0.9);
+
+  /* if backdrop support: more transparent and blurred */
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    background-color: rgba(var(--hup-color--black), 0.5);
+    -webkit-backdrop-filter: blur(2rem);
+    backdrop-filter: blur(2rem);
+  }
+
+  &[aria-expanded='true'] {
+    top: 0;
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    list-style-type: none;
+    text-transform: uppercase;
+    gap: 0.5rem;
+  }
+}
+</style>

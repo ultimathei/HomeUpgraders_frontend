@@ -19,13 +19,6 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.mp4'],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "@/styles/global.scss";`,
-      },
-    },
-  },
   plugins: [
     vue(),
     eslintPlugin(),

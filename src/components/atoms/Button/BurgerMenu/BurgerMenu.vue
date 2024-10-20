@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="$style.button"
+    class="button"
     :disabled="disabled"
     :aria-disabled="disabled || undefined"
     :aria-label="label"
@@ -29,4 +29,74 @@ defineProps({
 const emit = defineEmits(['click'])
 </script>
 
-<style src="./BurgerMenu.module.scss" module lang="scss"></style>
+<style scoped lang="scss">
+.button {
+  --color: rgb(var(--hup-color--white));
+  --font-size: 1rem;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size);
+  height: 2.5em;
+  padding: 0;
+  position: relative;
+  width: 2.5em;
+  transition: all 0.2s ease-in-out;
+
+  &:is(:hover, :focus-visible):not(:disabled):not(&[data-open='true']) span {
+    &:nth-child(1) {
+      transform: rotate(-7deg);
+    }
+    &:nth-child(2) {
+      left: 1em;
+      width: 1.5em;
+    }
+    &:nth-child(3) {
+      transform: rotate(7deg);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  span {
+    background-color: var(--color);
+    border-radius: 2px;
+    display: block;
+    height: 0.5em;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 1em;
+    }
+    &:nth-child(3) {
+      top: 2em;
+    }
+  }
+
+  &[data-open='true'] span {
+    &:nth-child(1) {
+      transform: translate(-0.25em, 1em) rotate(-45deg);
+      width: 3rem;
+    }
+    &:nth-child(2) {
+      opacity: 0;
+      left: 1em;
+      width: 0.5em;
+    }
+    &:nth-child(3) {
+      transform: translate(-0.25em, -1em) rotate(45deg);
+      width: 3rem;
+    }
+  }
+}
+</style>
